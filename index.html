@@ -1,9 +1,816 @@
-<https://claude.ai/>
-Content is user-generated and unverified.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Camp - UX Test RFP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--b:#EE907B;--bl:#FDF0ED;--t:#2B7A8C;--tl:#E5F5FA;--n:#3D3D3D;--g:#8D9092;--w:#FFF;--gu:#C57B8A;--tr:#C193C3;--cn:#4AC1E0;--lt:#F7F9FA}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 
-1
+/* TOP BAR */
+.top{background:var(--t);height:32px;display:flex;align-items:center;padding:0 12px;gap:8px}
+.waffle{display:grid;grid-template-columns:repeat(3,4px);gap:2px}.waffle span{background:rgba(255,255,255,.7);border-radius:1px;width:4px;height:4px}
+.top .sn{color:#fff;font-size:10px;font-weight:500}
+.top input{margin-left:auto;background:rgba(255,255,255,.15);border:none;border-radius:4px;padding:4px 10px;color:#fff;font-size:9px;width:150px;font-family:'Poppins',sans-serif}
+.top input::placeholder{color:rgba(255,255,255,.4)}
 
-Customize <https://claude.ai/remixv2?uuid=bded7ef4-d520-4993-b92f-
-f2f1c6218e1e>
-Content is user-generated and unverified.
+/* SP NAV */
+.spn{background:var(--w);border-bottom:1px solid #E8E8E8;padding:0 16px;display:flex;gap:16px}
+.spn a{font-size:11px;color:var(--g);text-decoration:none;padding:10px 0;border-bottom:2px solid transparent;font-weight:500;cursor:pointer}
+.spn a.on{color:var(--t);border-color:var(--t)}
+.spn a:hover{color:var(--n)}
 
+/* PAGES */
+.pg{display:none;max-width:900px;margin:0 auto;padding:16px}
+.pg.on{display:block}
+
+/* HOME PAGE LAYOUT */
+.home-grid{display:grid;grid-template-columns:1fr 260px;gap:16px}
+.home-main{}
+.home-side{}
+
+/* HERO */
+.hero{background:var(--n);border-radius:14px;padding:32px 28px;margin-bottom:12px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(74,193,224,.08);pointer-events:none}
+.hero-eyebrow{font-size:9px;font-weight:700;color:rgba(74,193,224,.8);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.hero h1{font-size:26px;font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px}
+.hero h1 em{color:var(--cn);font-style:normal}
+.hero .sub{font-size:11px;color:rgba(255,255,255,.55);line-height:1.7;max-width:400px;margin-bottom:18px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap}
+.hp{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 12px}
+.hp span{font-size:10px;color:rgba(255,255,255,.7);font-weight:500}
+.hp-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+
+/* MIRROR STRIP */
+.mirror{background:rgba(74,193,224,.06);border:1px solid rgba(74,193,224,.15);border-radius:10px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.mirror-bar{width:3px;height:32px;background:var(--cn);border-radius:2px;flex-shrink:0}
+.mirror-text{font-size:11px;color:var(--n);line-height:1.6}
+.mirror-text strong{color:var(--t);font-weight:700}
+
+/* HOW IT WORKS */
+.hiw{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;padding:16px;margin-bottom:12px}
+.hiw-title{font-size:10px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.hiw-steps{display:flex;gap:0;align-items:center}
+.hiw-step{flex:1;text-align:center;position:relative}
+.hiw-step::after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);font-size:10px;color:#D0D0D0;font-weight:700}
+.hiw-step:last-child::after{display:none}
+.hiw-num{width:26px;height:26px;border-radius:50%;background:var(--lt);border:1.5px solid #E0E0E0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--t);margin:0 auto 5px}
+.hiw-label{font-size:9px;color:var(--n);font-weight:600;line-height:1.4}
+.hiw-sub{font-size:8px;color:var(--g);line-height:1.4;margin-top:2px}
+
+/* CAMP CARDS */
+.act-label{font-size:11px;font-weight:700;color:var(--n);margin-bottom:4px}
+.act-sub{font-size:10px;color:var(--g);margin-bottom:10px}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.ac{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;padding:16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.ac:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.ac.gu::before{background:var(--gu)}.ac.gu:hover{border-color:var(--gu)}
+.ac.bu::before{background:var(--b)}.ac.bu:hover{border-color:var(--b)}
+.ac.cn::before{background:var(--cn)}.ac.cn:hover{border-color:var(--cn)}
+.ac.th::before{background:var(--tr)}.ac.th:hover{border-color:var(--tr)}
+.ac .nm{font-size:15px;font-weight:800;margin-bottom:2px}
+.ac.gu .nm{color:var(--gu)}.ac.bu .nm{color:var(--b)}.ac.cn .nm{color:var(--cn)}.ac.th .nm{color:var(--tr)}
+.ac .sk{font-size:8px;color:var(--g);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.ac .ds{font-size:10px;color:#555;line-height:1.55;margin-bottom:6px}
+.ac .tb{font-size:9px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.ac.gu .tb{color:var(--gu)}.ac.bu .tb{color:var(--b)}.ac.cn .tb{color:var(--cn)}.ac.th .tb{color:var(--tr)}
+.ac .jn{font-size:10px;font-weight:700;padding:7px 14px;border-radius:14px;border:none;cursor:pointer;width:100%;font-family:'Poppins',sans-serif;transition:all .2s}
+.ac.gu .jn{background:rgba(197,123,138,.1);color:var(--gu)}.ac.gu .jn:hover{background:var(--gu);color:#fff}
+.ac.bu .jn{background:rgba(238,144,123,.1);color:var(--b)}.ac.bu .jn:hover{background:var(--b);color:#fff}
+.ac.cn .jn{background:rgba(74,193,224,.1);color:var(--cn)}.ac.cn .jn:hover{background:var(--cn);color:#fff}
+.ac.th .jn{background:rgba(193,147,195,.1);color:var(--tr)}.ac.th .jn:hover{background:var(--tr);color:#fff}
+
+/* MESS HALL */
+.mh-intro{font-size:10px;color:var(--g);margin-bottom:8px;font-style:italic}
+.msp{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden}
+.msp-h{padding:8px 14px;background:#F5F5F5;display:flex;align-items:center;gap:4px;border-bottom:1px solid #E8E8E8}
+.msp-h .h{font-size:12px;font-weight:700;color:var(--t)}
+.msp-h .c{font-size:9px;font-weight:600;color:var(--n)}
+.msp-h .lv{margin-left:auto;font-size:8px;color:var(--b);font-weight:600;display:flex;align-items:center;gap:3px}
+.msp-h .lv::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--b)}
+.msp-p{padding:10px 14px;border-bottom:1px solid #F0F0F0}
+.msp-p:last-child{border:none}
+.msp-u{display:flex;align-items:center;gap:5px;margin-bottom:4px}
+.av{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff}
+.msp-n{font-size:9px;font-weight:600;color:var(--n)}
+.msp-t{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
+.msp-txt{font-size:10px;color:#555;line-height:1.5}
+.msp-rx{font-size:9px;color:var(--g);margin-top:4px}
+
+/* TW and activity CSS moved to new home CSS above */
+
+/* SIDEBAR */
+.side-card{background:var(--w);border-radius:10px;border:1px solid #E8E8E8;padding:12px;margin-bottom:12px}
+.side-title{font-size:11px;font-weight:700;color:var(--n);margin-bottom:8px}
+/* Progress bar */
+.prog{display:flex;gap:2px;margin-bottom:4px}
+.prog-s{height:5px;border-radius:3px;flex:1}
+.prog-s.done{background:var(--t)}.prog-s.now{background:var(--b)}.prog-s.fut{background:#E8E8E8}
+.prog-s.off{background:#F5F5F5;border:1px dashed #D8D8D8}
+.prog-lab{display:flex;justify-content:space-between;font-size:7px;color:var(--g)}
+.prog-cur{font-size:10px;font-weight:600;color:var(--b);margin-top:4px}
+/* Campfire */
+.cf-w{text-align:center;padding:10px}
+.cf-i{font-size:20px;margin-bottom:2px}
+.cf-t{font-size:11px;font-weight:600;color:var(--b)}
+.cf-d{font-size:9px;color:var(--g)}
+.cf-c{font-size:18px;font-weight:800;color:var(--n);margin-top:4px}
+
+/* ACTIVITY PAGES (inner) */
+.inner{max-width:480px;margin:0 auto}
+.ph{text-align:center;margin:12px 0 8px}
+.pl{display:inline-block;font-size:9px;font-weight:700;padding:4px 14px;border-radius:16px;letter-spacing:1px;text-transform:uppercase}
+.pl-f{background:var(--bl);color:var(--b)}.pl-s{background:var(--tl);color:var(--t)}.pl-a{background:#E8F5E8;color:#2D6A2D}.pl-r{background:#F5EDF5;color:#6A2D6A}.pl-p{background:#F5F5F5;color:var(--g)}
+.sp{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden;margin:10px 0}
+.sb{background:var(--t);padding:5px 10px}.sb span{color:#fff;font-size:9px;font-weight:500}
+.sy{padding:14px}
+.dr{margin:6px 0}
+.dd{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
+.dl{font-size:10px;font-weight:700;color:var(--b);text-transform:uppercase;min-width:44px;padding-top:2px}
+.dt{font-size:13px;color:var(--n);line-height:1.5}
+.sl{font-size:9px;font-weight:600;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin:14px 0 2px}
+.nd{background:var(--tl);border-radius:12px;padding:12px 14px;margin:10px 0}
+.nd .fr{font-size:8px;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.nd .kt{font-size:12px;color:var(--n);line-height:1.6;font-style:italic}
+.ms{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden;margin:10px 0}
+.ms-h{padding:8px 14px;background:#F5F5F5;display:flex;align-items:center;gap:4px;border-bottom:1px solid #E8E8E8}
+.ms-h .h{font-size:12px;font-weight:700;color:var(--t)}
+.ms-h .c{font-size:9px;font-weight:600;color:var(--n)}
+.mp{padding:12px 14px}.mp+.mp{border-top:1px solid #F0F0F0}
+.mu{display:flex;align-items:center;gap:5px;margin-bottom:4px}
+.un{font-size:9px;font-weight:600;color:var(--n)}
+.ut{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
+.mt{font-size:11px;line-height:1.5;color:var(--n)}
+.mi{background:var(--bl);border-radius:8px;padding:24px 12px;text-align:center;margin:6px 0;font-size:9px;color:var(--b);font-weight:500;border:1px dashed var(--b)}
+.mr{font-size:9px;color:var(--g);margin-top:4px}
+
+/* 7taps */
+.tp{background:var(--n);border-radius:12px;overflow:hidden;margin:10px 0}
+.tt{padding:18px;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.tn2{font-size:8px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.tx{font-size:13px;color:#fff;line-height:1.5;font-weight:500;max-width:340px}
+.tsu{font-size:10px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4;max-width:320px}
+.tq{margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.to{padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);font-size:9px;cursor:pointer;font-family:'Poppins',sans-serif;background:none;transition:all .2s}
+.to:hover{background:rgba(255,255,255,.1);color:#fff}
+.to.pk{background:var(--b);border-color:var(--b);color:#fff}
+.td2{display:flex;justify-content:center;gap:4px;padding:8px}
+.tdd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
+.tdd.on{background:var(--b);width:14px;border-radius:3px}
+.tnv{display:flex;justify-content:space-between;padding:0 12px 8px}
+.tnb{background:none;border:none;color:rgba(255,255,255,.4);font-size:9px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:500}
+.tnb:hover{color:#fff}
+
+/* Voice */
+.vc{background:var(--bl);border-radius:16px;padding:7px 12px;display:inline-flex;align-items:center;gap:5px;margin:6px 0}
+.vp{width:20px;height:20px;border-radius:50%;background:var(--b);display:flex;align-items:center;justify-content:center}
+.vp::after{content:'';width:0;height:0;border-left:6px solid #fff;border-top:3px solid transparent;border-bottom:3px solid transparent;margin-left:1px}
+.vbs{display:flex;gap:2px;align-items:center}
+.vbr{width:2px;border-radius:1px;background:var(--b)}
+.vtm{font-size:8px;color:var(--b);font-weight:500}
+
+/* Confidence */
+.cn2{background:var(--bl);border-radius:12px;padding:14px;margin:10px 0;text-align:center}
+.cn2 p{font-size:11px;color:var(--n);font-style:italic;margin-bottom:8px;line-height:1.5}
+.cds{display:flex;justify-content:center;gap:8px}
+.cdd{width:30px;height:30px;border-radius:50%;border:2px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--b);cursor:pointer;transition:all .2s}
+.cdd:hover,.cdd.se{background:var(--b);color:#fff}
+.cdl{display:flex;justify-content:space-between;font-size:7px;color:var(--g);margin-top:3px;padding:0 4px}
+
+/* Back button */
+.back{font-size:10px;color:var(--t);cursor:pointer;font-weight:600;margin-bottom:8px;display:inline-block}
+.back:hover{text-decoration:underline}
+
+/* Campfire end */
+.cfe{text-align:center;margin:14px 0;padding:12px;background:var(--bl);border-radius:12px}
+
+/* Names */
+.ngg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.ncc{border-radius:10px;padding:12px;text-align:center}
+.ncc .nnm{font-size:15px;font-weight:700;margin-bottom:2px}
+.ncc .nsk{font-size:8px;color:var(--g)}
+.ncc .nds{font-size:8px;color:#999;font-style:italic;margin-top:2px}
+
+.badge2{position:fixed;top:6px;right:6px;background:var(--b);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:8px;letter-spacing:1px;text-transform:uppercase;z-index:20}
+</style>
+</head>
+<body>
+<div class="badge2">RFP · UX Test</div>
+
+<!-- TOP BAR -->
+<div class="top">
+<div class="waffle"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<span class="sn">Summer Camp</span>
+<input placeholder="Search camp...">
+</div>
+
+<!-- SP NAV -->
+<div class="spn">
+<a class="on" onclick="nav('home')">Home</a>
+<a onclick="nav('gu')">Giddy Up</a>
+<a onclick="nav('bu-signup')">Bullseye</a>
+<a onclick="nav('cn')">Cannonball</a>
+<a onclick="nav('th-signup')">Trailhead</a>
+</div>
+
+<!-- HOME PAGE -->
+<div class="pg on" id="home">
+<div class="home-grid">
+<div class="home-main">
+
+<!-- BEAT 0 + 1: THE PROMISE + PROOF -->
+<div class="hero">
+<div class="hero-eyebrow">Summer Camp · June 1 – Sept 1 · All employees</div>
+<h1>This summer, you're getting<br>time back to go <em>forward.</em></h1>
+<p class="sub">Ten minutes a week. A dare inside the work you are already doing. No extra meetings. No reflection journals. Just one skill, practiced in real work, four weeks at a time.</p>
+<div class="hero-pills">
+<div class="hp"><div class="hp-dot" style="background:var(--cn)"></div><span>10 min / week</span></div>
+<div class="hp"><div class="hp-dot" style="background:var(--b)"></div><span>Inside real work</span></div>
+<div class="hp"><div class="hp-dot" style="background:var(--gu)"></div><span>No extra meetings</span></div>
+<div class="hp"><div class="hp-dot" style="background:var(--tr)"></div><span>You pick the skill</span></div>
+</div>
+</div>
+
+<!-- BEAT 2: THE MIRROR -->
+<div class="mirror">
+<div class="mirror-bar"></div>
+<div class="mirror-text">Frida's last performance review flagged the same four gaps across <strong>174 employees.</strong> We built a camp for each one. Pick the one that costs you the most time right now.</div>
+</div>
+
+<!-- BEAT 3: HOW IT WORKS -->
+<div class="hiw">
+<div class="hiw-title">How it works</div>
+<div class="hiw-steps">
+<div class="hiw-step">
+<div class="hiw-num">1</div>
+<div class="hiw-label">Pick a camp</div>
+<div class="hiw-sub">One skill. Four weeks.</div>
+</div>
+<div class="hiw-step">
+<div class="hiw-num">2</div>
+<div class="hiw-label">Get a dare</div>
+<div class="hiw-sub">In real work. 10 min.</div>
+</div>
+<div class="hiw-step">
+<div class="hiw-num">3</div>
+<div class="hiw-label">Post what happened</div>
+<div class="hiw-sub">Short. Not polished.</div>
+</div>
+<div class="hiw-step">
+<div class="hiw-num">4</div>
+<div class="hiw-label">Notice the shift</div>
+<div class="hiw-sub">By Week 3.</div>
+</div>
+</div>
+</div>
+
+<!-- BEAT 4: CAMP CARDS -->
+<div class="act-label">Pick your way forward.</div>
+<div class="act-sub">Four skills. Four gaps that cost people time. Pick the one that is most real for you right now.</div>
+<div class="act-grid">
+<div class="ac gu">
+<div class="nm">Giddy Up</div>
+<div class="sk">Lead through influence</div>
+<div class="ds">You know when the room is drifting. You go along anyway. This is the practice of asking one question instead.</div>
+<div class="tb">  Saves time in meetings that drift</div>
+<button class="jn" onclick="nav('gu')">Join Giddy Up →</button>
+</div>
+<div class="ac bu">
+<div class="nm">Bullseye</div>
+<div class="sk">Prioritize what matters most</div>
+<div class="ds">Your list keeps growing. The filter does not tell you to do less. It tells you what to do first.</div>
+<div class="tb">  Saves time on the wrong targets</div>
+<button class="jn" onclick="nav('bu-signup')">Join Bullseye →</button>
+</div>
+<div class="ac cn">
+<div class="nm">Cannonball</div>
+<div class="sk">Decide with imperfect info</div>
+<div class="ds">A test has a question. If you cannot name what you are testing for, you already have the answer.</div>
+<div class="tb">  Saves time decisions sit undecided</div>
+<button class="jn" onclick="nav('cn')">Join Cannonball →</button>
+</div>
+<div class="ac th">
+<div class="nm">Trailhead</div>
+<div class="sk">Navigate ambiguity</div>
+<div class="ds">The trail does not get clearer the longer you stand at the trailhead. This is the practice of moving while it is still foggy.</div>
+<div class="tb">  Saves time waiting for clarity</div>
+<button class="jn" onclick="nav('th-signup')">Join Trailhead →</button>
+</div>
+</div>
+
+<!-- BEAT 5: SOCIAL PROOF -->
+<div class="mh-intro">Nobody posts perfect. They post real. Here is what Week 1 looks like.</div>
+<div class="msp">
+<div class="msp-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span><span class="lv">Live</span></div>
+<div class="msp-p"><div class="msp-u"><div class="av" style="background:var(--b)">LN</div><span class="msp-n">Lesley N.</span><span class="msp-t" style="background:var(--b)">Bullseye</span></div><div class="msp-txt">3 things fit on the square. My real list has 11. That toilet paper said a lot.</div><div class="msp-rx">  22 ·  6</div></div>
+<div class="msp-p"><div class="msp-u"><div class="av" style="background:var(--cn)">AT</div><span class="msp-n">Alex T.</span><span class="msp-t" style="background:var(--cn)">Cannonball</span></div><div class="msp-txt">Lasted 9 seconds on one foot. Been sitting on that vendor decision for 11 days. My body knew before I did.</div><div class="msp-rx">  19 ·  4</div></div>
+<div class="msp-p"><div class="msp-u"><div class="av" style="background:var(--gu)">MK</div><span class="msp-n">Maya K.</span><span class="msp-t" style="background:var(--gu)">Giddy Up</span></div><div class="msp-txt">Wrote the sentence I didn't say. Been holding that one for three weeks apparently.</div><div class="msp-rx">  31 ·  11</div></div>
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
+<div class="home-side">
+<div class="side-card"><div class="side-title">Camp progress</div>
+<div class="prog"><div class="prog-s now"></div><div class="prog-s fut"></div><div class="prog-s fut"></div><div class="prog-s fut"></div><div class="prog-s fut" style="opacity:.6"></div><div class="prog-s off"></div><div class="prog-s fut"></div><div class="prog-s fut"></div><div class="prog-s fut"></div><div class="prog-s fut"></div><div class="prog-s fut" style="opacity:.5"></div><div class="prog-s fut" style="opacity:.3"></div><div class="prog-s fut" style="opacity:.3"></div></div>
+<div class="prog-lab"><span>Wk 1</span><span>Fire</span><span>Off</span><span>Fire</span><span>Wk 13</span></div>
+<div class="prog-cur">Week 1 of 13 · Session 1</div></div>
+<div class="side-card"><div class="cf-w"><div class="cf-i"> </div><div class="cf-t">Campfire 1</div><div class="cf-d">Everyone gathers · 45 min</div><div class="cf-c">26 days</div></div></div>
+<div class="side-card">
+<div class="side-title">Kit at the Flag Pole</div>
+<div style="font-size:9px;color:var(--g);margin-bottom:6px;font-weight:600">Week 1 · Session 1</div>
+<div style="font-size:11px;color:var(--n);line-height:1.6;font-style:italic;border-left:2px solid var(--t);padding-left:10px">You get a dare. You do it in real work. You post what happened. No quizzes. No grades. Your dare is up.</div>
+<div style="margin-top:10px;text-align:center"><button onclick="nav('bu-signup')" style="background:var(--t);color:#fff;border:none;padding:5px 14px;border-radius:14px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">See your dare →</button></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- BULLSEYE SIGN-UP -->
+<div class="pg" id="bu-signup">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb"><span>Bullseye · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">One arrow. One target.<br></div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to focus on what matters most right now. Protect your time. Choose the right target before you spread your energy across too many.</div>
+<div class="cn2"><p>How confident are you at choosing what matters most when everything feels urgent?</p>
+<div class="cds"><div class="cdd" onclick="sel(this)">1</div><div class="cdd" onclick="sel(this)">2</div><div class="cdd" onclick="sel(this)">3</div><div class="cdd" onclick="sel(this)">4</div><div class="cdd" onclick="sel(this)">5</div></div>
+<div class="cdl"><span>Rarely</span><span>Often</span></div></div>
+<div style="text-align:center;margin-top:10px"><button onclick="nav('bu-w1')" style="background:var(--b);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Join Bullseye →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 1 -->
+<div class="pg" id="bu-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Grab one square of toilet paper. Write your priorities. Just what fits.</div></div>
+<div class="dd"><div class="dl">Look</div><div class="dt">Look at your real to-do list. What didn't make the square?</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Photo of the square.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">Grabbed your square yet? Doesn't have to be pretty. If most of it fits, you might already be good at this. If it doesn't, welcome to the dare.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mi">  [Your toilet paper square]<br>3 priorities. One tiny square.</div>
+<div class="mt" style="margin-top:6px">3 things fit. My real list has 11. That square told me a lot.</div>
+<div class="mr">  22 ·  6</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w2')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 2 →</button></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 2 -->
+<div class="pg" id="bu-w2">
+<div class="inner">
+<div class="back" onclick="nav('bu-w1')">← Week 1</div>
+<div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div>
+<div class="dd"><div class="dl">Do</div><div class="dt">Run the filter on your real list. Cross out what doesn't pass.</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Screenshot of your crossed-out list.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="ts3"></div><div class="td2" id="td3"></div>
+<div class="tnv"><button class="tnb" onclick="tn2(-1)">← Back</button><button class="tnb" onclick="tn2(1)">Next →</button></div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mi">  [Your crossed-out list]<br>7 crossed out. 3 still standing.</div>
+<div class="mt" style="margin-top:6px">10 targets. 3 survived. The other 7 can wait. Apparently.</div>
+<div class="mr">  18 ·  5</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w3')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 3 -->
+<div class="pg" id="bu-w3">
+<div class="inner">
+<div class="back" onclick="nav('bu-w2')">← Week 2</div>
+<div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Bring your filtered list to your next 1:1. Say: Here is what I think can shift. What am I missing?</div></div>
+<div class="dd"><div class="dl">Watch</div><div class="dt">What your manager validates. What they push back on.</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Two sentences. What you brought. What your manager said.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">Had the conversation yet? Your next 1:1 works. Start with "I've been thinking about my priorities." Most managers welcome this conversation.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">Brought my filtered list to my 1:1. She helped me delegate one thing and pushed back on another. Ten minutes. Worth it.</div>
+<div class="mr">  26 ·  9</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">MK</div><span class="un">Maya K.</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mt">Guided the conversation instead of going along. My skip-level said "I'm glad you brought this up."</div>
+<div class="mr">  31 ·  11</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w4')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 4 -->
+<div class="pg" id="bu-w4">
+<div class="inner">
+<div class="back" onclick="nav('bu-w3')">← Week 3</div>
+<div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Something new just landed on your plate. Before you say yes, run the filter on your full list.</div></div>
+<div class="dd"><div class="dl">Think</div><div class="dt">What shifts to make room? What conversation do you need with your manager?</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Voice note or one sentence. What landed, what shifted, what you said.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">Anything new land on your plate this week? Before you say yes, run the filter. You have been practicing this for three weeks. See how it feels.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="vc"><div class="vp"></div><div class="vbs"><div class="vbr" style="height:6px"></div><div class="vbr" style="height:11px"></div><div class="vbr" style="height:17px"></div><div class="vbr" style="height:9px"></div><div class="vbr" style="height:15px"></div><div class="vbr" style="height:20px"></div><div class="vbr" style="height:7px"></div><div class="vbr" style="height:13px"></div><div class="vbr" style="height:18px"></div><div class="vbr" style="height:5px"></div></div><span class="vtm">0:14</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"New project from the VP. Ran the filter. Drives a result we need but I'm not the right person. Talked to my manager. She helped move it to another team in about 10 minutes."</div>
+<div class="mr">  28 ·  8 ·  5</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--tr)">RJ</div><span class="un">Riley J.</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mt">I saw an undefined problem. Wrote it on a whiteboard in three sentences. My director said "yes. That."</div>
+<div class="mr">  24 ·  6</div></div></div>
+<div class="cfe"><div style="font-size:18px;margin-bottom:2px"> </div><div style="font-size:11px;font-weight:600;color:var(--b)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+<div style="text-align:center;margin-top:8px"><button onclick="nav('names')" style="background:var(--n);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">One more thing: the names →</button></div>
+</div>
+</div>
+
+<!-- PLACEHOLDER PAGES -->
+<!-- GIDDY UP SIGN-UP -->
+<div class="pg" id="gu">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Lead through influence.<br>No title required.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">One question moves the room. That is the giddy up. This is the practice of turning your read into one question, not a takeover.</div>
+<div class="cn2" style="background:rgba(197,123,138,.08)"><p>How confident are you in your ability to lead through influence right now?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">1</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">2</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">3</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">4</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">5</div></div>
+<div class="cdl"><span>Not at all</span><span>Very</span></div></div>
+<div style="text-align:center;margin-top:10px"><button onclick="nav('gu-w1')" style="background:var(--gu);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Join Giddy Up →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 1 -->
+<div class="pg" id="gu-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl" style="background:rgba(197,123,138,.1);color:var(--gu)">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Think of the last meeting where the conversation drifted. Write the sentence you didn't say. Put it on paper. Real paper.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Look</div><div class="dt">How long has that sentence been sitting with you?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A photo of what you wrote. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="fr" style="color:var(--gu)">Kit</div><div class="kt">Something happened in a meeting recently. The conversation went sideways. You saw it. You had the words. You went along anyway. This week: write that sentence down.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mi" style="background:rgba(197,123,138,.08);border-color:var(--gu);color:var(--gu)">  [Your sentence on paper]</div>
+<div class="mt" style="margin-top:6px">"We should slow down and validate this first." Been sitting with that one for two weeks.</div>
+<div class="mr">  19 ·  7</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w2')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 2 →</button></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 2 -->
+<div class="pg" id="gu-w2">
+<div class="inner">
+<div class="back" onclick="nav('gu-w1')">← Week 1</div>
+<div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">Watch the Giddy Up 7taps. Swipe through all seven slides. Tap your answer on Slide 4.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Write the question you would ask if that room reconvened tomorrow. One sentence.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="gu-ts"></div><div class="td2" id="gu-td"></div>
+<div class="tnv"><button class="tnb" onclick="guTn(-1)">← Back</button><button class="tnb" onclick="guTn(1)">Next →</button></div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mi" style="background:rgba(197,123,138,.08);border-color:var(--gu);color:var(--gu)">  [Your Slide 4 answer]</div>
+<div class="mt" style="margin-top:6px">Tapped B. My question for tomorrow: "What are we optimizing for here?"</div>
+<div class="mr">  16 ·  5</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w3')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 3 -->
+<div class="pg" id="gu-w3">
+<div class="inner">
+<div class="back" onclick="nav('gu-w2')">← Week 2</div>
+<div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">In your next cross-functional or team meeting, ask one question instead of stating your position. Use it once.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">What happens after you ask it? Does the room shift? Does it get dismissed? Does it open something?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Two sentences. What you asked. What happened next.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="fr" style="color:var(--gu)">Kit</div><div class="kt">Here is your rep. Pick a meeting this week. Real one. Use the skill once. Then tell your manager what happened. Not what you planned. What actually happened.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mt">Asked "what are we optimizing for here?" Room went quiet for about five seconds. Then someone said speed over quality. Conversation shifted. That was the skill.</div>
+<div class="mr">  31 ·  11</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w4')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 4 -->
+<div class="pg" id="gu-w4">
+<div class="inner">
+<div class="back" onclick="nav('gu-w3')">← Week 3</div>
+<div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">When the moment shows up this week, ask before you assert. One question. In the room.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">What did you almost say instead?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Voice note (15 sec) or one sentence. What you asked. What shifted.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="fr" style="color:var(--gu)">Kit</div><div class="kt">This week the dare finds you. A meeting that drifts. A decision that needs a push. A room that needs a read. Use the skill. No setup. No prep. Just one question.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="vc" style="background:rgba(197,123,138,.1)"><div class="vp" style="background:var(--gu)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--gu)"></div><div class="vbr" style="height:11px;background:var(--gu)"></div><div class="vbr" style="height:17px;background:var(--gu)"></div><div class="vbr" style="height:9px;background:var(--gu)"></div><div class="vbr" style="height:15px;background:var(--gu)"></div><div class="vbr" style="height:20px;background:var(--gu)"></div><div class="vbr" style="height:7px;background:var(--gu)"></div></div><span class="vtm" style="color:var(--gu)">0:13</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Room was drifting. Almost said my position. Asked what we were optimizing for instead. Director said that was the right question. Whole meeting shifted."</div>
+<div class="mr">  34 ·  12</div></div></div>
+<div class="cfe" style="background:rgba(197,123,138,.1)"><div style="font-size:18px;margin-bottom:2px"> </div><div style="font-size:11px;font-weight:600;color:var(--gu)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+<div style="text-align:center;margin-top:8px"><button onclick="nav('names')" style="background:var(--n);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">One more thing: the names →</button></div>
+</div>
+</div>
+<!-- CANNONBALL SIGN-UP -->
+<div class="pg" id="cn">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Decide with imperfect information.<br>Without stalling.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Toe in, jump, or take the steps. A test has a question. If you cannot name what you are testing for, you already have the answer.</div>
+<div class="cn2" style="background:rgba(74,193,224,.08)"><p>How confident are you in your ability to decide with imperfect information right now?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">1</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">2</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">3</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">4</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">5</div></div>
+<div class="cdl"><span>Not at all</span><span>Very</span></div></div>
+<div style="text-align:center;margin-top:10px"><button onclick="nav('cn-w1')" style="background:var(--cn);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Join Cannonball →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 1 -->
+<div class="pg" id="cn-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl" style="background:rgba(74,193,224,.1);color:var(--cn)">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Stand on one foot. Dip your toe toward the floor. Hold it. Think of the decision you have been circling. Stay there as long as you can.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Look</div><div class="dt">How long did you last? That is how long you have been holding this decision.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A photo of your toe. The number of days you have been sitting on the decision.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="fr" style="color:var(--cn)">Kit</div><div class="kt">You have a decision you have been circling. Not a hard one. One you already have enough to make. This week: feel what that costs you.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mi" style="background:rgba(74,193,224,.08);border-color:var(--cn);color:var(--cn)">  [Your toe photo] · 11 days</div>
+<div class="mt" style="margin-top:6px">Lasted 8 seconds. Been sitting on that vendor decision for 11 days. My body knew before I did.</div>
+<div class="mr">  23 ·  9</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w2')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 2 →</button></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 2 -->
+<div class="pg" id="cn-w2">
+<div class="inner">
+<div class="back" onclick="nav('cn-w1')">← Week 1</div>
+<div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Watch</div><div class="dt">Open the Cannonball 7taps. Swipe through all seven slides. Tap your answer on Slide 4.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Name your own decision. What are you testing for? Can you say it in one sentence?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="cn-ts"></div><div class="td2" id="cn-td"></div>
+<div class="tnv"><button class="tnb" onclick="cnTn(-1)">← Back</button><button class="tnb" onclick="cnTn(1)">Next →</button></div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mi" style="background:rgba(74,193,224,.08);border-color:var(--cn);color:var(--cn)">  [Your Slide 4 answer]</div>
+<div class="mt" style="margin-top:6px">Tapped B. Named my test question: am I confident in this vendor's reliability? Turns out yes. I've known that for a week. Jumped.</div>
+<div class="mr">  20 ·  7</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w3')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 3 -->
+<div class="pg" id="cn-w3">
+<div class="inner">
+<div class="back" onclick="nav('cn-w2')">← Week 2</div>
+<div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Pick a real decision this week. If you are toe in, name the question you are testing. Ask it. Then bring what happened to your manager.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Watch</div><div class="dt">Did naming the test question change how fast you moved?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Two sentences. Your read. What you decided.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="fr" style="color:var(--cn)">Kit</div><div class="kt">You have a real decision this week. Toe in, jump, or take the steps. If you are toe in, name what you are testing for. Bring what happened to your manager.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mt">Toe in on the agency decision. Named my test: am I confident in their process? Yes. Jumped. Manager said that was a week faster than usual.</div>
+<div class="mr">  25 ·  8</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w4')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 4 -->
+<div class="pg" id="cn-w4">
+<div class="inner">
+<div class="back" onclick="nav('cn-w3')">← Week 3</div>
+<div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">When a decision lands this week, read it first. Toe in, jump, or take the steps. Ask the matching question.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Think</div><div class="dt">What would you have done without the read?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Voice note (15 sec) or one sentence. Your read. The move you made.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="fr" style="color:var(--cn)">Kit</div><div class="kt">This week the dare finds you. A decision will show up. Something real. Something that needs a move. Read it. Ask the question. Decide.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="vc" style="background:rgba(74,193,224,.1)"><div class="vp" style="background:var(--cn)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--cn)"></div><div class="vbr" style="height:11px;background:var(--cn)"></div><div class="vbr" style="height:17px;background:var(--cn)"></div><div class="vbr" style="height:9px;background:var(--cn)"></div><div class="vbr" style="height:15px;background:var(--cn)"></div><div class="vbr" style="height:20px;background:var(--cn)"></div><div class="vbr" style="height:7px;background:var(--cn)"></div></div><span class="vtm" style="color:var(--cn)">0:11</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Budget reallocation landed. Read it as a jump -- reversible if Q3 shifts. Named my test question. Had the answer in under two minutes. Moved."</div>
+<div class="mr">  27 ·  9</div></div></div>
+<div class="cfe" style="background:rgba(74,193,224,.1)"><div style="font-size:18px;margin-bottom:2px"> </div><div style="font-size:11px;font-weight:600;color:var(--cn)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+<div style="text-align:center;margin-top:8px"><button onclick="nav('names')" style="background:var(--n);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">One more thing: the names →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD SIGN-UP -->
+<div class="pg" id="th-signup">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb"><span>Trailhead · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">No map. No GPS.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to read what's in front of you and pick a direction before someone draws the path for you. Ambiguity is not a problem. It's terrain. This is about learning to read it.</div>
+<div class="cn2" style="background:rgba(193,147,195,.08)"><p>How confident are you at choosing a direction when the path forward isn't clear?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">1</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">2</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">3</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">4</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">5</div></div>
+<div class="cdl"><span>Rarely</span><span>Often</span></div></div>
+<div style="text-align:center;margin-top:10px"><button onclick="nav('th-w1')" style="background:var(--tr);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Join Trailhead →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 1 -->
+<div class="pg" id="th-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Grab a blank piece of paper. Draw your biggest open question at work as a trail. No words. No labels. Just terrain. 60 seconds. Think: squiggly lines. Forks. Dead ends. Where does the path go?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Look</div><div class="dt">Where does the trail stop? Where does it branch?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Photo of the trail map.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">Drew your trail yet? Doesn't have to look like a real map. If the path is clear all the way to the end, you might already be good at this. If it runs out somewhere in the middle, welcome to the dare.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mi" style="background:rgba(193,147,195,.08);border-color:var(--tr);color:var(--tr)">  [Your trail map]<br>Path ends about halfway through.</div>
+<div class="mt" style="margin-top:6px">Drew my current project. The path disappears about halfway through. That felt about right.</div>
+<div class="mr">  17 ·  5</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">LN</div><span class="un">Lesley N.</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">3 things fit on the square. My real list has 11. That toilet paper said a lot.</div>
+<div class="mr">  22 ·  6</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('th-w2')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 2 →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 2 -->
+<div class="pg" id="th-w2">
+<div class="inner">
+<div class="back" onclick="nav('th-w1')">← Week 1</div>
+<div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Read your own open question. Which layer applies: act, stake, or park?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="th-ts"></div><div class="td2" id="th-td"></div>
+<div class="tnv"><button class="tnb" onclick="thTn(-1)">← Back</button><button class="tnb" onclick="thTn(1)">Next →</button></div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mi" style="background:rgba(193,147,195,.08);border-color:var(--tr);color:var(--tr)">  [Your annotated map]<br>Two things clear. Six things fog.</div>
+<div class="mt" style="margin-top:6px">Two things were clear. Six things were fog. One direction had movement. That's where I'm going.</div>
+<div class="mr">  14 ·  4</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('th-w3')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 3 -->
+<div class="pg" id="th-w3">
+<div class="inner">
+<div class="back" onclick="nav('th-w2')">← Week 2</div>
+<div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Pick your messiest open question at work. Read the terrain. Identify one thing you can act on, one thing to stake, one thing to park. Bring it to your manager.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">Which layer was hardest to name?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Two sentences. Your open question. Which layer you moved on.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">Had the conversation yet? Your next 1:1 works. Start with "I've been thinking about this open question." Most managers welcome someone who shows up with a direction instead of a question.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mt">Brought my terrain read to my 1:1. My manager added one constraint I hadn't seen. Changed my direction. Worth the 10 minutes.</div>
+<div class="mr">  21 ·  7</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">LN</div><span class="un">Lesley N.</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">Brought my filtered list to my 1:1. She helped me delegate one thing and pushed back on another. Ten minutes. Worth it.</div>
+<div class="mr">  26 ·  9</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('th-w4')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 4 -->
+<div class="pg" id="th-w4">
+<div class="inner">
+<div class="back" onclick="nav('th-w3')">← Week 3</div>
+<div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">When ambiguity shows up this week, read the terrain. Name what is act, stake, and park. Move on at least one.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">What would you have done without the read?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Voice note (15 sec) or one sentence. What you moved on and what you parked.</div></div>
+</div></div></div>
+<div class="sl">Kit in Slack (Wednesday)</div>
+<div class="nd"><div class="fr">Kit</div><div class="kt">This week the dare finds you. Ambiguity will show up. A project without a clear brief. A conversation that needs direction. A question nobody is answering. Read the terrain. Move on what you can.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="vc" style="background:rgba(193,147,195,.1)"><div class="vp" style="background:var(--tr)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--tr)"></div><div class="vbr" style="height:11px;background:var(--tr)"></div><div class="vbr" style="height:17px;background:var(--tr)"></div><div class="vbr" style="height:9px;background:var(--tr)"></div><div class="vbr" style="height:15px;background:var(--tr)"></div><div class="vbr" style="height:20px;background:var(--tr)"></div><div class="vbr" style="height:7px;background:var(--tr)"></div><div class="vbr" style="height:13px;background:var(--tr)"></div><div class="vbr" style="height:18px;background:var(--tr)"></div><div class="vbr" style="height:5px;background:var(--tr)"></div></div><span class="vtm" style="color:var(--tr)">0:12</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Inherited an undefined project. Ran the terrain read. Two things were clear. Picked a direction. Sent my manager one sentence. She said go."</div>
+<div class="mr">  24 ·  6 ·  8</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">AT</div><span class="un">Alex T.</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">New project from the VP. Ran the filter. Not the right person. Moved it in 10 minutes.</div>
+<div class="mr">  28 ·  8</div></div></div>
+<div class="cfe" style="background:rgba(193,147,195,.1)"><div style="font-size:18px;margin-bottom:2px"> </div><div style="font-size:11px;font-weight:600;color:var(--tr)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+<div style="text-align:center;margin-top:8px"><button onclick="nav('names')" style="background:var(--n);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">One more thing: the names →</button></div>
+</div>
+</div>
+
+<!-- NAMES -->
+<div class="pg" id="names">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sy">
+<div style="font-size:14px;font-weight:700;color:var(--n);margin-bottom:4px">The four camps</div>
+<div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:10px">Each one teaches a different skill. Do these feel like something you'd sign up for?</div>
+<div class="ngg">
+<div class="ncc" style="background:rgba(197,123,138,.1)"><div class="nnm" style="color:var(--gu)">Giddy Up</div><div class="nsk">Lead through influence</div><div class="nds">Guide people your direction without being the boss</div></div>
+<div class="ncc" style="background:var(--bl)"><div class="nnm" style="color:var(--b)">Bullseye</div><div class="nsk">Prioritize what matters most</div><div class="nds">Focus when everything feels urgent</div></div>
+<div class="ncc" style="background:rgba(74,193,224,.1)"><div class="nnm" style="color:var(--cn)">Cannonball</div><div class="nsk">Decide with imperfect info</div><div class="nds">Jump before you're 100% ready</div></div>
+<div class="ncc" style="background:rgba(193,147,195,.1)"><div class="nnm" style="color:var(--tr)">Trailhead</div><div class="nsk">Navigate ambiguity</div><div class="nds">Find the path before someone marks it for you</div></div>
+</div>
+<div style="font-size:11px;font-weight:600;color:var(--n);margin:10px 0 4px">Questions:</div>
+<div style="font-size:10px;color:#666;line-height:2">1. Which name would you sign up for first?<br>2. Do any make you cringe?<br>3. Do they feel like they belong together?<br>4. Would you change any? To what?<br>5. If you saw these on a SharePoint page, would you click one?</div>
+</div></div>
+</div>
+</div>
+
+<script>
+function nav(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.spn a').forEach(a=>a.classList.remove('on'));
+  if(id==='home')document.querySelectorAll('.spn a')[0].classList.add('on');
+  else if(id.startsWith('gu'))document.querySelectorAll('.spn a')[1].classList.add('on');
+  else if(id.startsWith('bu'))document.querySelectorAll('.spn a')[2].classList.add('on');
+  else if(id.startsWith('cn'))document.querySelectorAll('.spn a')[3].classList.add('on');
+  else if(id.startsWith('th'))document.querySelectorAll('.spn a')[4].classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function sel(el){document.querySelectorAll('#bu-signup .cdd').forEach(d=>d.classList.remove('se'));el.classList.add('se')}
+function selGu(el){document.querySelectorAll(
