@@ -9,16 +9,37 @@
 :root{--b:#EE907B;--bl:#FDF0ED;--t:#2B7A8C;--tl:#E5F5FA;--n:#3D3D3D;--g:#8D9092;--w:#FFF;--gu:#C57B8A;--tr:#C193C3;--cn:#4AC1E0;--lt:#F7F9FA}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
+
+/* TOP BAR */
 .top{background:var(--t);height:32px;display:flex;align-items:center;padding:0 12px;gap:8px}
 .waffle{display:grid;grid-template-columns:repeat(3,4px);gap:2px}.waffle span{background:rgba(255,255,255,.7);border-radius:1px;width:4px;height:4px}
 .top .sn{color:#fff;font-size:10px;font-weight:500}
 .top input{margin-left:auto;background:rgba(255,255,255,.15);border:none;border-radius:4px;padding:4px 10px;color:#fff;font-size:9px;width:150px;font-family:'Poppins',sans-serif}
 .top input::placeholder{color:rgba(255,255,255,.4)}
+
+/* SP NAV */
 .spn{background:var(--w);border-bottom:1px solid #E8E8E8;padding:0 16px;display:flex;gap:16px}
 .spn a{font-size:11px;color:var(--g);text-decoration:none;padding:10px 0;border-bottom:2px solid transparent;font-weight:500;cursor:pointer}
-.spn a.on{color:var(--t);border-color:var(--t)}.spn a:hover{color:var(--n)}
-.pg{display:none;max-width:900px;margin:0 auto;padding:16px}.pg.on{display:block}
+.spn a.on{color:var(--t);border-color:var(--t)}
+.spn a:hover{color:var(--n)}
+
+/* PAGES */
+.pg{display:none;max-width:900px;margin:0 auto;padding:16px}
+.pg.on{display:block}
+
+/* HOME PAGE LAYOUT */
+.home-grid{display:grid;grid-template-columns:1fr 260px;gap:16px}
+.home-main{}
+.home-side{}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#EFF8F4 0%,#FFF 50%,#FDF0ED 100%);border-radius:14px;padding:28px;margin-bottom:16px}
 .hero-badge{display:inline-block;font-size:9px;font-weight:600;padding:3px 10px;border-radius:14px;background:rgba(74,193,224,.1);color:var(--t);border:1px solid rgba(74,193,224,.2);margin-bottom:10px}
+.hero h1{font-size:22px;font-weight:800;color:var(--n);line-height:1.2;margin-bottom:6px}
+.hero h1 em{color:var(--t);font-style:normal}
+.hero .sub{font-size:11px;color:var(--g);line-height:1.6;max-width:420px}
+
+/* THIS WEEK */
 .tw{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden;margin-bottom:16px}
 .tw-h{padding:10px 16px;background:var(--n);display:flex;align-items:center;justify-content:space-between}
 .tw-h span{color:#fff;font-size:11px;font-weight:600}
@@ -27,47 +48,67 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 .tw-kit{font-size:12px;line-height:1.7;color:var(--n);font-style:italic;border-left:3px solid var(--t);padding:8px 12px;background:var(--lt);border-radius:0 8px 8px 0;margin-bottom:10px}
 .tw-kit .fr{font-size:8px;font-weight:700;color:var(--t);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px;font-style:normal}
 .tw-cta{display:inline-block;background:var(--t);color:#fff;font-size:10px;font-weight:600;padding:5px 14px;border-radius:16px;cursor:pointer;text-decoration:none}
-.act-label{font-size:16px;font-weight:700;color:var(--n);margin-bottom:16px}
-.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
-.ac{background:var(--w);border-radius:14px;border:1px solid #E8E8E8;padding:20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
-.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.ac:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+
+/* ACTIVITY CARDS */
+.act-label{font-size:12px;font-weight:700;color:var(--n);margin-bottom:10px}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.ac{background:var(--w);border-radius:10px;border:1px solid #E8E8E8;padding:14px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.ac:hover{transform:translateY(-2px)}
 .ac.gu::before{background:var(--gu)}.ac.gu:hover{border-color:var(--gu)}
 .ac.bu::before{background:var(--b)}.ac.bu:hover{border-color:var(--b)}
 .ac.cn::before{background:var(--cn)}.ac.cn:hover{border-color:var(--cn)}
 .ac.th::before{background:var(--tr)}.ac.th:hover{border-color:var(--tr)}
-.ac .nm{font-size:18px;font-weight:800;margin-bottom:3px}
-.ac .sk{font-size:9px;color:var(--g);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.ac .ds{font-size:12px;color:#666;line-height:1.6}
-.ac .jn{font-size:10px;font-weight:700;padding:6px 14px;border-radius:14px;border:2px solid;background:none;cursor:pointer;margin-top:14px;font-family:'Poppins',sans-serif;display:inline-block;transition:all .2s}
-.ac.gu .jn:hover{background:var(--gu);color:#fff}.ac.bu .jn:hover{background:var(--b);color:#fff}
-.ac.cn .jn:hover{background:var(--cn);color:#fff}.ac.th .jn:hover{background:var(--tr);color:#fff}
+.ac .nm{font-size:14px;font-weight:700;margin-bottom:2px}
+.ac.gu .nm{color:var(--gu)}.ac.bu .nm{color:var(--b)}.ac.cn .nm{color:var(--cn)}.ac.th .nm{color:var(--tr)}
+.ac .sk{font-size:9px;color:var(--g);font-weight:500;text-transform:uppercase;letter-spacing:.3px;margin-bottom:6px}
+.ac .ds{font-size:10px;color:#666;line-height:1.5}
+.ac .jn{font-size:9px;font-weight:600;padding:4px 10px;border-radius:12px;border:1.5px solid;background:none;cursor:pointer;margin-top:8px;font-family:'Poppins',sans-serif}
+.ac.gu .jn{border-color:var(--gu);color:var(--gu)}.ac.bu .jn{border-color:var(--b);color:var(--b)}
+.ac.cn .jn{border-color:var(--cn);color:var(--cn)}.ac.th .jn{border-color:var(--tr);color:var(--tr)}
+
+/* MESS HALL PREVIEW */
 .msp{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden}
 .msp-h{padding:8px 14px;background:#F5F5F5;display:flex;align-items:center;gap:4px;border-bottom:1px solid #E8E8E8}
-.msp-h .h{font-size:12px;font-weight:700;color:var(--t)}.msp-h .c{font-size:9px;font-weight:600;color:var(--n)}
+.msp-h .h{font-size:12px;font-weight:700;color:var(--t)}
+.msp-h .c{font-size:9px;font-weight:600;color:var(--n)}
 .msp-h .lv{margin-left:auto;font-size:8px;color:var(--b);font-weight:600;display:flex;align-items:center;gap:3px}
 .msp-h .lv::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--b)}
-.msp-p{padding:10px 14px;border-bottom:1px solid #F0F0F0}.msp-p:last-child{border:none}
+.msp-p{padding:10px 14px;border-bottom:1px solid #F0F0F0}
+.msp-p:last-child{border:none}
 .msp-u{display:flex;align-items:center;gap:5px;margin-bottom:4px}
 .av{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff}
-.msp-n{font-size:9px;font-weight:600;color:var(--n)}.msp-t{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
-.msp-txt{font-size:10px;color:#555;line-height:1.5}.msp-rx{font-size:9px;color:var(--g);margin-top:4px}
+.msp-n{font-size:9px;font-weight:600;color:var(--n)}
+.msp-t{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
+.msp-txt{font-size:10px;color:#555;line-height:1.5}
+.msp-rx{font-size:9px;color:var(--g);margin-top:4px}
+
+/* SIDEBAR */
 .side-card{background:var(--w);border-radius:10px;border:1px solid #E8E8E8;padding:12px;margin-bottom:12px}
 .side-title{font-size:11px;font-weight:700;color:var(--n);margin-bottom:8px}
-.prog{display:flex;gap:2px;margin-bottom:4px}.prog-s{height:5px;border-radius:3px;flex:1}
+/* Progress bar */
+.prog{display:flex;gap:2px;margin-bottom:4px}
+.prog-s{height:5px;border-radius:3px;flex:1}
 .prog-s.done{background:var(--t)}.prog-s.now{background:var(--b)}.prog-s.fut{background:#E8E8E8}
 .prog-s.off{background:#F5F5F5;border:1px dashed #D8D8D8}
 .prog-lab{display:flex;justify-content:space-between;font-size:7px;color:var(--g)}
 .prog-cur{font-size:10px;font-weight:600;color:var(--b);margin-top:4px}
-.cf-w{text-align:center;padding:10px}.cf-i{font-size:20px;margin-bottom:2px}
-.cf-t{font-size:11px;font-weight:600;color:var(--b)}.cf-d{font-size:9px;color:var(--g)}
+/* Campfire */
+.cf-w{text-align:center;padding:10px}
+.cf-i{font-size:20px;margin-bottom:2px}
+.cf-t{font-size:11px;font-weight:600;color:var(--b)}
+.cf-d{font-size:9px;color:var(--g)}
 .cf-c{font-size:18px;font-weight:800;color:var(--n);margin-top:4px}
-.inner{max-width:480px;margin:0 auto}.ph{text-align:center;margin:12px 0 8px}
+
+/* ACTIVITY PAGES (inner) */
+.inner{max-width:480px;margin:0 auto}
+.ph{text-align:center;margin:12px 0 8px}
 .pl{display:inline-block;font-size:9px;font-weight:700;padding:4px 14px;border-radius:16px;letter-spacing:1px;text-transform:uppercase}
-.pl-f{background:var(--bl);color:var(--b)}.pl-s{background:var(--tl);color:var(--t)}.pl-a{background:#E8F5E8;color:#2D6A2D}.pl-r{background:#F5EDF5;color:#6A2D6A}
+.pl-f{background:var(--bl);color:var(--b)}.pl-s{background:var(--tl);color:var(--t)}.pl-a{background:#E8F5E8;color:#2D6A2D}.pl-r{background:#F5EDF5;color:#6A2D6A}.pl-p{background:#F5F5F5;color:var(--g)}
 .sp{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden;margin:10px 0}
 .sb{background:var(--t);padding:5px 10px}.sb span{color:#fff;font-size:9px;font-weight:500}
-.sy{padding:14px}.dr{margin:6px 0}
+.sy{padding:14px}
+.dr{margin:6px 0}
 .dd{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
 .dl{font-size:10px;font-weight:700;color:var(--b);text-transform:uppercase;min-width:44px;padding-top:2px}
 .dt{font-size:13px;color:var(--n);line-height:1.5}
@@ -77,13 +118,17 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 .nd .kt{font-size:12px;color:var(--n);line-height:1.6;font-style:italic}
 .ms{background:var(--w);border-radius:12px;border:1px solid #E8E8E8;overflow:hidden;margin:10px 0}
 .ms-h{padding:8px 14px;background:#F5F5F5;display:flex;align-items:center;gap:4px;border-bottom:1px solid #E8E8E8}
-.ms-h .h{font-size:12px;font-weight:700;color:var(--t)}.ms-h .c{font-size:9px;font-weight:600;color:var(--n)}
+.ms-h .h{font-size:12px;font-weight:700;color:var(--t)}
+.ms-h .c{font-size:9px;font-weight:600;color:var(--n)}
 .mp{padding:12px 14px}.mp+.mp{border-top:1px solid #F0F0F0}
 .mu{display:flex;align-items:center;gap:5px;margin-bottom:4px}
-.un{font-size:9px;font-weight:600;color:var(--n)}.ut{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
+.un{font-size:9px;font-weight:600;color:var(--n)}
+.ut{font-size:7px;font-weight:700;padding:1px 4px;border-radius:4px;color:#fff}
 .mt{font-size:11px;line-height:1.5;color:var(--n)}
 .mi{background:var(--bl);border-radius:8px;padding:24px 12px;text-align:center;margin:6px 0;font-size:9px;color:var(--b);font-weight:500;border:1px dashed var(--b)}
 .mr{font-size:9px;color:var(--g);margin-top:4px}
+
+/* 7taps */
 .tp{background:var(--n);border-radius:12px;overflow:hidden;margin:10px 0}
 .tt{padding:18px;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .tn2{font-size:8px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
@@ -91,41 +136,72 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 .tsu{font-size:10px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4;max-width:320px}
 .tq{margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
 .to{padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);font-size:9px;cursor:pointer;font-family:'Poppins',sans-serif;background:none;transition:all .2s}
-.to:hover{background:rgba(255,255,255,.1);color:#fff}.to.pk{background:var(--b);border-color:var(--b);color:#fff}
+.to:hover{background:rgba(255,255,255,.1);color:#fff}
+.to.pk{background:var(--b);border-color:var(--b);color:#fff}
 .td2{display:flex;justify-content:center;gap:4px;padding:8px}
 .tdd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
 .tdd.on{background:var(--b);width:14px;border-radius:3px}
 .tnv{display:flex;justify-content:space-between;padding:0 12px 8px}
 .tnb{background:none;border:none;color:rgba(255,255,255,.4);font-size:9px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:500}
 .tnb:hover{color:#fff}
+
+/* Voice */
 .vc{background:var(--bl);border-radius:16px;padding:7px 12px;display:inline-flex;align-items:center;gap:5px;margin:6px 0}
 .vp{width:20px;height:20px;border-radius:50%;background:var(--b);display:flex;align-items:center;justify-content:center}
 .vp::after{content:'';width:0;height:0;border-left:6px solid #fff;border-top:3px solid transparent;border-bottom:3px solid transparent;margin-left:1px}
-.vbs{display:flex;gap:2px;align-items:center}.vbr{width:2px;border-radius:1px;background:var(--b)}
+.vbs{display:flex;gap:2px;align-items:center}
+.vbr{width:2px;border-radius:1px;background:var(--b)}
 .vtm{font-size:8px;color:var(--b);font-weight:500}
+
+/* Confidence */
 .cn2{background:var(--bl);border-radius:12px;padding:14px;margin:10px 0;text-align:center}
 .cn2 p{font-size:11px;color:var(--n);font-style:italic;margin-bottom:8px;line-height:1.5}
 .cds{display:flex;justify-content:center;gap:8px}
 .cdd{width:30px;height:30px;border-radius:50%;border:2px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--b);cursor:pointer;transition:all .2s}
 .cdd:hover,.cdd.se{background:var(--b);color:#fff}
 .cdl{display:flex;justify-content:space-between;font-size:7px;color:var(--g);margin-top:3px;padding:0 4px}
+
+/* Back button */
 .back{font-size:10px;color:var(--t);cursor:pointer;font-weight:600;margin-bottom:8px;display:inline-block}
 .back:hover{text-decoration:underline}
+
+/* Campfire end */
 .cfe{text-align:center;margin:14px 0;padding:12px;background:var(--bl);border-radius:12px}
-.ngg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+
+/* PANEL FEEDBACK */
+.panel-q{background:var(--w);border-radius:14px;border:1px solid #E8E8E8;padding:18px;margin:12px 0}
+.panel-q.answered{border-color:var(--t)}
+.pq-num{font-size:9px;font-weight:700;color:var(--t);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.pq-text{font-size:14px;font-weight:700;color:var(--n);line-height:1.4;margin-bottom:4px}
+.pq-sub{font-size:10px;color:var(--g);margin-bottom:12px}
+.pq-opts{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.pq-btn{background:none;border:1.5px solid #E8E8E8;border-radius:10px;padding:8px 14px;font-size:11px;font-weight:500;color:var(--n);cursor:pointer;font-family:'Poppins',sans-serif;text-align:left;transition:all .15s}
+.pq-btn:hover{border-color:var(--t);color:var(--t)}
+.pq-btn.selected{background:var(--t);border-color:var(--t);color:#fff;font-weight:700}
+.pq-ta{width:100%;border:1.5px solid #E8E8E8;border-radius:8px;padding:8px 10px;font-size:11px;font-family:'Poppins',sans-serif;color:var(--n);resize:none;outline:none;box-sizing:border-box}
+.pq-ta:focus{border-color:var(--t)}
 .ncc{border-radius:10px;padding:12px;text-align:center}
-.ncc .nnm{font-size:15px;font-weight:700;margin-bottom:2px}.ncc .nsk{font-size:8px;color:var(--g)}
+.ncc .nnm{font-size:15px;font-weight:700;margin-bottom:2px}
+.ncc .nsk{font-size:8px;color:var(--g)}
+.ncc .nds{font-size:8px;color:#999;font-style:italic;margin-top:2px}
+
 .badge2{position:fixed;top:6px;right:6px;background:var(--b);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:8px;letter-spacing:1px;text-transform:uppercase;z-index:20}
+
+/* PROTOTYPE SIMULATOR BAR */
 .wsim{background:#1a1a1a;padding:6px 16px;display:flex;align-items:center;gap:16px}
 .wsim .wlbl{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase}
 .wsim-btns{display:flex;gap:4px}
 .wsim-btn{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);font-size:9px;font-weight:600;padding:3px 10px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;transition:all .2s}
 .wsim-btn.on{background:var(--t);border-color:var(--t);color:#fff}
 .wsim-divider{width:1px;background:rgba(255,255,255,.1);height:16px}
+
+/* MANAGER MAGNIFY BLOCK */
 .magnify{background:#1C1C1C;border-radius:12px;padding:14px 16px;margin:14px 0;display:none}
 .magnify.show{display:block}
 .mag-label{font-size:8px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
 .mag-text{font-size:12px;color:rgba(255,255,255,.85);line-height:1.65}
+
+/* FULL VIEWPORT HERO */
 .hero-full{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px 80px;background:linear-gradient(155deg,#E5F5FA 0%,#FFFFFF 45%,#FDF0ED 100%);position:relative}
 .hero-full .hbadge{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--t);background:rgba(43,122,140,.1);padding:5px 14px;border-radius:20px;margin-bottom:28px}
 .hero-full h1{font-size:clamp(30px,5.5vw,54px);font-weight:800;color:var(--n);line-height:1.15;margin-bottom:18px;max-width:720px}
@@ -135,45 +211,83 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 .scroll-cue .sc-label{font-size:10px;font-weight:600;color:var(--t);letter-spacing:.5px}
 .bounce-arrow{font-size:18px;color:var(--t);animation:bounce 1.6s ease-in-out infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* HERO RETURNING (WEEK 2+) */
 .hero-r{background:linear-gradient(155deg,#F7F9FA 0%,#FFFFFF 40%,#FFF8F0 100%)}
-.hero-r h1 em{color:var(--b)}.hero-r .hbadge{color:var(--b);background:rgba(238,144,123,.1)}
+.hero-r h1 em{color:var(--b)}
+.hero-r .hbadge{color:var(--b);background:rgba(238,144,123,.1)}
 .hero-r .scroll-cue .sc-label,.hero-r .bounce-arrow{color:var(--b)}
-.below-fold{max-width:900px;margin:0 auto;padding:32px 16px}
+
+/* BELOW FOLD */
+.below-fold{max-width:900px;margin:0 auto;padding:32px 16px 32px}
+
+/* UPDATED CAMP CARDS */
+.act-label{font-size:16px;font-weight:700;color:var(--n);margin-bottom:16px}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.ac{background:var(--w);border-radius:14px;border:1px solid #E8E8E8;padding:20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.ac:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.ac .nm{font-size:18px;font-weight:800;margin-bottom:3px}
+.ac .sk{font-size:9px;color:var(--g);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.ac .ds{font-size:12px;color:#666;line-height:1.6}
+.ac .jn{font-size:10px;font-weight:700;padding:6px 14px;border-radius:14px;border:2px solid;background:none;cursor:pointer;margin-top:14px;font-family:'Poppins',sans-serif;display:inline-block;transition:all .2s}
+.ac.gu .jn:hover,.ac.bu .jn:hover,.ac.cn .jn:hover,.ac.th .jn:hover{color:#fff}
+.ac.gu .jn:hover{background:var(--gu)}.ac.bu .jn:hover{background:var(--b)}.ac.cn .jn:hover{background:var(--cn)}.ac.th .jn:hover{background:var(--tr)}
+
+/* KIT HOME BANNER - upgraded weight */
 .kit-home{background:var(--n);border-radius:14px;padding:20px 24px;margin-bottom:24px;display:flex;gap:14px;align-items:flex-start}
 .kit-home .kit-body .kit-name{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
 .kit-home .kit-body .kit-text{font-size:15px;color:#fff;line-height:1.65;font-weight:500}
-.ep-wrap{margin:16px 0 4px}.ep-label{font-size:10px;font-weight:700;color:var(--n);margin-bottom:10px}
+
+/* EMOJI PICKER */
+.ep-wrap{margin:16px 0 4px}
+.ep-label{font-size:10px;font-weight:700;color:var(--n);margin-bottom:10px}
 .ep-sub{font-size:10px;color:var(--g);margin-bottom:10px}
 .ep-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .ep-e{width:36px;height:36px;border-radius:8px;border:2px solid #E8E8E8;background:var(--w);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:all .15s;user-select:none}
-.ep-e:hover{border-color:var(--t);transform:scale(1.1)}.ep-e.taken{opacity:.25;cursor:not-allowed;pointer-events:none}
+.ep-e:hover{border-color:var(--t);transform:scale(1.1)}
+.ep-e.taken{opacity:.25;cursor:not-allowed;pointer-events:none}
 .ep-e.chosen{border-color:var(--t);background:var(--tl);transform:scale(1.1)}
 .ep-chosen{display:none;align-items:center;gap:10px;background:var(--lt);border-radius:10px;padding:10px 14px;margin-top:8px}
-.ep-chosen.show{display:flex}.ep-chosen .ec-em{font-size:28px}
+.ep-chosen.show{display:flex}
+.ep-chosen .ec-em{font-size:28px}
 .ep-chosen .ec-txt{font-size:11px;color:var(--n);font-weight:600}
 .ep-chosen .ec-change{font-size:9px;color:var(--t);cursor:pointer;font-weight:600;margin-left:auto}
 .ep-chosen .ec-change:hover{text-decoration:underline}
+
+/* WHAT TO EXPECT */
 .wte{margin:12px 0}
+.wte-label{font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .wte-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #F0F0F0}
 .wte-row:last-child{border:none}
 .wte-if{font-size:11px;font-weight:600;color:var(--n);min-width:130px;flex-shrink:0}
 .wte-then{font-size:11px;color:#555;line-height:1.5}
+
+/* POST-CONFIDENCE */
 .post-conf{border-radius:12px;padding:16px;margin:14px 0;text-align:center}
 .post-conf .pc-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .post-conf p{font-size:12px;color:var(--n);font-style:italic;margin-bottom:10px;line-height:1.5}
 .post-conf .pc-sub{font-size:10px;color:var(--g);margin-top:8px}
+
+/* ARC CLOSE */
 .arc-close{text-align:center;padding:20px 16px;margin:14px 0;background:var(--lt);border-radius:14px}
 .arc-close .arc-week{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--g);margin-bottom:8px}
 .arc-close .arc-msg{font-size:15px;font-weight:700;color:var(--n);line-height:1.4;margin-bottom:4px}
 .arc-close .arc-sub{font-size:11px;color:var(--g)}
 .done-card{background:var(--tl);border-radius:14px;padding:22px 20px;margin-top:16px;text-align:center;border:1px solid rgba(43,122,140,.15)}
+.done-card .done-kit-name{font-size:9px;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
 .done-card .done-msg{font-size:15px;font-weight:600;color:var(--n);line-height:1.5;font-style:italic}
 .done-card .done-sub{font-size:11px;color:var(--g);margin-top:6px}
 </style>
 </head>
 <body>
 <div class="badge2">RFP · UX Test</div>
+
+<!-- HIDDEN GOOGLE FORM IFRAME — never visible to user -->
+<!-- Jeremy: paste your formResponse URL into the iframe src below -->
 <iframe id="gf-hidden" name="gf-hidden" style="display:none" title="form"></iframe>
+
+<!-- PROTOTYPE SIMULATOR BAR -->
 <div class="wsim">
   <span class="wlbl">Prototype</span>
   <div class="wsim-btns">
@@ -188,10 +302,15 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
     <button class="wsim-btn" id="role-mgr" onclick="setRole('manager')">Manager</button>
   </div>
 </div>
+
+<!-- TOP BAR -->
 <div class="top">
 <div class="waffle"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-<span class="sn">Summer Camp</span><input placeholder="Search camp...">
+<span class="sn">Summer Camp</span>
+<input placeholder="Search camp...">
 </div>
+
+<!-- SP NAV -->
 <div class="spn">
 <a class="on" onclick="nav('home')">Home</a>
 <a onclick="nav('gu')">Giddy Up</a>
@@ -199,112 +318,1231 @@ body{font-family:'Poppins',sans-serif;background:var(--lt);min-height:100vh}
 <a onclick="nav('cn')">Cannonball</a>
 <a onclick="nav('th-signup')">Trailhead</a>
 </div>
+
+<!-- HOME PAGE -->
 <div class="pg on" id="home">
+
+  <!-- HERO: WEEK 1 -->
   <div class="hero-full" id="hv1">
     <div class="hbadge">June 1 – Sept 1 · All employees · Remote</div>
-    <h1>This summer, you're getting<em>time back to go forward.</em></h1>
+    <h1>This summer, you're getting<em>time back to <i>grow</i> forward.</em></h1>
     <p class="hero-sub">One dare a week. Do it in real work. Something will click that didn't before.</p>
     <div class="scroll-cue" onclick="document.getElementById('below').scrollIntoView({behavior:'smooth'})">
-      <span class="sc-label">Pick your cabin</span><div class="bounce-arrow">↓</div>
+      <span class="sc-label">Pick your cabin</span>
+      <div class="bounce-arrow">↓</div>
     </div>
   </div>
+
+  <!-- HERO: WEEK 2 (hidden by default) -->
   <div class="hero-full hero-r" id="hv2" style="display:none">
     <div class="hbadge">Week 2 of 4 · Session 1</div>
     <h1>You came back.<em>Here's what's waiting.</em></h1>
     <p class="hero-sub">Two minutes. Then you'll know exactly what to say to your manager.</p>
     <div class="scroll-cue" onclick="document.getElementById('below').scrollIntoView({behavior:'smooth'})">
-      <span class="sc-label">Keep going</span><div class="bounce-arrow">↓</div>
+      <span class="sc-label">Keep going</span>
+      <div class="bounce-arrow">↓</div>
     </div>
   </div>
+
+  <!-- HERO: WEEK 3 (hidden by default) -->
   <div class="hero-full hero-r" id="hv3" style="display:none">
     <div class="hbadge">Week 3 of 4 · Session 1</div>
     <h1>You saw the skill.<em>Now bring it to your manager.</em></h1>
-    <p class="hero-sub">You practiced it. Now bring it into a real conversation.</p>
+    <p class="hero-sub">You practiced it. Now bring it into a real conversation. See what happens.</p>
     <div class="scroll-cue" onclick="document.getElementById('below').scrollIntoView({behavior:'smooth'})">
-      <span class="sc-label">Keep going</span><div class="bounce-arrow">↓</div>
+      <span class="sc-label">Keep going</span>
+      <div class="bounce-arrow">↓</div>
     </div>
   </div>
+
+  <!-- HERO: WEEK 4 (hidden by default) -->
   <div class="hero-full hero-r" id="hv4" style="display:none">
     <div class="hbadge">Week 4 of 4 · Session 1</div>
     <h1>Last week.<em>The dare finds you.</em></h1>
     <p class="hero-sub">Something real will land this week. You'll know what to do with it.</p>
     <div class="scroll-cue" onclick="document.getElementById('below').scrollIntoView({behavior:'smooth'})">
-      <span class="sc-label">Keep going</span><div class="bounce-arrow">↓</div>
+      <span class="sc-label">Keep going</span>
+      <div class="bounce-arrow">↓</div>
     </div>
   </div>
+
+  <!-- BELOW FOLD -->
   <div class="below-fold" id="below">
-    <div class="kit-home" id="kit-home-w1"><div class="kit-body"><div class="kit-name" style="color:var(--t)">Flag Pole · Week 1</div><div class="kit-text">Pick your cabin. Do the dare. Post what happened. That's the whole game.</div></div></div>
-    <div class="kit-home" id="kit-home-w2" style="display:none"><div class="kit-body"><div class="kit-name" style="color:var(--b)">Flag Pole · Week 2</div><div class="kit-text">Good. Now see what was behind last week's dare. Two minutes. Slide 4 is where it gets interesting.</div></div></div>
-    <div class="kit-home" id="kit-home-w3" style="display:none"><div class="kit-body"><div class="kit-name" style="color:var(--b)">Flag Pole · Week 3</div><div class="kit-text">You have the language now. Your manager doesn't yet. Bring what you found. That conversation is the dare.</div></div></div>
-    <div class="kit-home" id="kit-home-w4" style="display:none"><div class="kit-body"><div class="kit-name" style="color:var(--b)">Flag Pole · Week 4</div><div class="kit-text">No dare this week. Something real will show up. Three weeks of practice says you'll catch it.</div></div></div>
+
+    <!-- Home banner: Week 1 -->
+    <div class="kit-home" id="kit-home-w1">
+      <div class="kit-body">
+        <div class="kit-name" style="color:var(--t)">Flag Pole · Week 1</div>
+        <div class="kit-text">Pick your cabin. Do the dare. Post what happened. That's the whole game. Your first dare is up.</div>
+      </div>
+    </div>
+
+    <!-- Home banner: Week 2 (hidden by default) -->
+    <div class="kit-home" id="kit-home-w2" style="display:none">
+      <div class="kit-body">
+        <div class="kit-name" style="color:var(--b)">Flag Pole · Week 2</div>
+        <div class="kit-text">Good. Now see what was behind last week's dare. Two minutes. Slide 4 is where it gets interesting.</div>
+      </div>
+    </div>
+
+    <!-- Home banner: Week 3 (hidden by default) -->
+    <div class="kit-home" id="kit-home-w3" style="display:none">
+      <div class="kit-body">
+        <div class="kit-name" style="color:var(--b)">Flag Pole · Week 3</div>
+        <div class="kit-text">You have the language now. Your manager doesn't yet. Bring what you found. That conversation is the dare.</div>
+      </div>
+    </div>
+
+    <!-- Home banner: Week 4 (hidden by default) -->
+    <div class="kit-home" id="kit-home-w4" style="display:none">
+      <div class="kit-body">
+        <div class="kit-name" style="color:var(--b)">Flag Pole · Week 4</div>
+        <div class="kit-text">No dare this week. Something real will show up. Three weeks of practice says you'll catch it.</div>
+      </div>
+    </div>
+
     <div class="act-label">Pick your cabin.</div>
     <div class="act-grid">
-      <div class="ac gu" id="card-gu" onclick="nav('gu')"><div class="nm" style="color:var(--gu)">Giddy Up</div><div class="sk">Lead through influence</div><div class="ds">You're not the boss. But you often know the right direction. Guide people without a title.</div><button class="jn" id="btn-gu" style="border-color:var(--gu);color:var(--gu)">Join →</button></div>
-      <div class="ac bu" id="card-bu" onclick="nav('bu-signup')"><div class="nm" style="color:var(--b)">Bullseye</div><div class="sk">Prioritize what matters most</div><div class="ds">One arrow. One target. Stop spreading effort across everything.</div><button class="jn" id="btn-bu" style="border-color:var(--b);color:var(--b)">Join →</button></div>
-      <div class="ac cn" id="card-cn" onclick="nav('cn')"><div class="nm" style="color:var(--cn)">Cannonball</div><div class="sk">Decide with imperfect info</div><div class="ds">The water moves whether you're ready or not. Jump before you feel 100% ready.</div><button class="jn" id="btn-cn" style="border-color:var(--cn);color:var(--cn)">Join →</button></div>
-      <div class="ac th" id="card-th" onclick="nav('th-signup')"><div class="nm" style="color:var(--tr)">Trailhead</div><div class="sk">Navigate ambiguity</div><div class="ds">No marked path. No GPS. Read the terrain. Choose a direction before the path is marked.</div><button class="jn" id="btn-th" style="border-color:var(--tr);color:var(--tr)">Join →</button></div>
+      <div class="ac gu" id="card-gu" onclick="nav('gu')">
+        <div class="nm" style="color:var(--gu)">Giddy Up</div>
+        <div class="sk">Lead through influence</div>
+        <div class="ds">You're not the boss. But you often know the right direction. Guide people without a title.</div>
+        <button class="jn" id="btn-gu" style="border-color:var(--gu);color:var(--gu)">Join →</button>
+      </div>
+      <div class="ac bu" id="card-bu" onclick="nav('bu-signup')">
+        <div class="nm" style="color:var(--b)">Bullseye</div>
+        <div class="sk">Prioritize what matters most</div>
+        <div class="ds">One arrow. One target. Stop spreading effort across everything and start protecting what actually moves the needle.</div>
+        <button class="jn" id="btn-bu" style="border-color:var(--b);color:var(--b)">Join →</button>
+      </div>
+      <div class="ac cn" id="card-cn" onclick="nav('cn')">
+        <div class="nm" style="color:var(--cn)">Cannonball</div>
+        <div class="sk">Decide with imperfect info</div>
+        <div class="ds">The water moves whether you're ready or not. Jump before you feel 100% ready.</div>
+        <button class="jn" id="btn-cn" style="border-color:var(--cn);color:var(--cn)">Join →</button>
+      </div>
+      <div class="ac th" id="card-th" onclick="nav('th-signup')">
+        <div class="nm" style="color:var(--tr)">Trailhead</div>
+        <div class="sk">Navigate ambiguity</div>
+        <div class="ds">No marked path. No GPS. Read the terrain. Choose a direction before the path is marked.</div>
+        <button class="jn" id="btn-th" style="border-color:var(--tr);color:var(--tr)">Join →</button>
+      </div>
     </div>
+
+    <!-- MESS HALL SLACK LINK -->
+    <div style="background:var(--w);border-radius:14px;border:1px solid #E8E8E8;padding:20px 24px;display:flex;align-items:center;gap:14px;margin-bottom:24px">
+      <div style="font-size:28px">🍽️</div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:700;color:var(--n)">Mess Hall</div>
+        <div style="font-size:11px;color:var(--g);line-height:1.5;margin-top:2px">Post your dares. See what landed. This is where camp happens.</div>
+      </div>
+      <a href="slack://channel?team=T2QAERENN&id=C0AQU05KBH6" style="background:var(--t);color:#fff;font-size:10px;font-weight:700;padding:8px 16px;border-radius:14px;text-decoration:none;font-family:'Poppins',sans-serif;white-space:nowrap">Open in Slack →</a>
+    </div>
+
+    </div>
+</div>
+
+<!-- BULLSEYE SIGN-UP -->
+<div class="pg" id="bu-signup">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb"><span>Bullseye · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">One arrow. One target.<br></div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to focus on what matters most right now. Protect your time. Choose the right target before you spread your energy across too many.</div>
+<div class="cn2"><p>How confident are you at choosing what matters most when everything feels urgent?</p>
+<div class="cds"><div class="cdd" onclick="sel(this)">1</div><div class="cdd" onclick="sel(this)">2</div><div class="cdd" onclick="sel(this)">3</div><div class="cdd" onclick="sel(this)">4</div><div class="cdd" onclick="sel(this)">5</div></div>
+<div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div>
+<div class="ep-wrap">
+  <div class="ep-label">Pick your Mess Hall avatar</div>
+  <div class="ep-sub">This is you in #summer-camp-mess-hall. Everyone posts under their avatar — no names, no judgment. Pick one and it's locked to you for the summer.</div>
+  <div class="ep-grid" id="ep-bu"></div>
+  <div class="ep-chosen" id="ec-bu">
+    <span class="ec-em" id="ec-bu-em"></span>
+    <span class="ec-txt">That's you. See you in Mess Hall.</span>
+    <span class="ec-change" onclick="resetEmoji('bu')">Change</span>
   </div>
 </div>
-<div class="pg" id="bu-signup"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="sp"><div class="sb"><span>Bullseye · Sign Up</span></div><div class="sy"><div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">One arrow. One target.</div><div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to focus on what matters most right now.</div><div class="cn2"><p>How confident are you at choosing what matters most when everything feels urgent?</p><div class="cds"><div class="cdd" onclick="sel(this)">1</div><div class="cdd" onclick="sel(this)">2</div><div class="cdd" onclick="sel(this)">3</div><div class="cdd" onclick="sel(this)">4</div><div class="cdd" onclick="sel(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div><div class="ep-wrap"><div class="ep-label">Pick your Mess Hall avatar</div><div class="ep-sub">This is you in #summer-camp-mess-hall. No names, no judgment.</div><div class="ep-grid" id="ep-bu"></div><div class="ep-chosen" id="ec-bu"><span class="ec-em" id="ec-bu-em"></span><span class="ec-txt">That's you. See you in Mess Hall.</span><span class="ec-change" onclick="resetEmoji('bu')">Change</span></div></div><div style="text-align:center;margin-top:10px"><button id="join-bu" onclick="joinCabin('bu','bu-w1')" style="background:var(--b);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Bullseye →</button></div></div></div></div></div>
-<div class="pg" id="bu-w1"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div><div class="sp"><div class="sb"><span>Bullseye > Week 1</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl">Do</div><div class="dt">Grab one square of toilet paper. Write your priorities. Just what fits.</div></div><div class="dd"><div class="dl">Look</div><div class="dt">What didn't make the square?</div></div><div class="dd"><div class="dl">Post</div><div class="dt">Photo of the square.</div></div></div></div></div><div class="magnify" id="mag-bu-w1"><div class="mag-label">Manager Magnify · Week 1</div><div class="mag-text">Do the toilet paper dare yourself. Post yours before your team posts theirs. Leaders go first.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div><div class="mi">🧻 [Your toilet paper square]</div><div class="mt" style="margin-top:6px">3 things fit. My real list has 11.</div><div class="mr">🔥 22 · 💬 6</div></div></div><div class="done-card"><div class="done-msg">You're done for this week. See you next Monday.</div><div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div></div></div></div>
-<div class="pg" id="bu-w2"><div class="inner"><div class="back" onclick="nav('bu-w1')">← Week 1</div><div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div><div class="sp"><div class="sb"><span>Bullseye > Week 2</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div><div class="dd"><div class="dl">Do</div><div class="dt">Run the filter on your real list. Cross out what doesn't pass.</div></div><div class="dd"><div class="dl">Post</div><div class="dt">Screenshot of your crossed-out list.</div></div></div></div></div><div class="sl">7taps (swipe through)</div><div class="tp"><div class="tt" id="ts3"></div><div class="td2" id="td3"></div><div class="tnv"><button class="tnb" onclick="tn2(-1)">← Back</button><button class="tnb" onclick="tn2(1)">Next →</button></div></div><div class="magnify" id="mag-bu-w2"><div class="mag-label">Manager Magnify · Week 2</div><div class="mag-text">Run your list before your team does. Bring what you find to your Week 3 conversation.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div><div class="mt">10 targets. 3 survived.</div><div class="mr">🔥 18 · 💬 5</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w3')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div></div></div>
-<div class="pg" id="bu-w3"><div class="inner"><div class="back" onclick="nav('bu-w2')">← Week 2</div><div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div><div class="sp"><div class="sb"><span>Bullseye > Week 3</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl">Do</div><div class="dt">Bring your filtered list to your next 1:1. Say: Here is what I think can shift. What am I missing?</div></div><div class="dd"><div class="dl">Post</div><div class="dt">Two sentences. What you brought. What your manager said.</div></div></div></div></div><div class="magnify" id="mag-bu-w3"><div class="mag-label">Manager Magnify · Week 3</div><div class="mag-text">Your direct report brings you their filtered list. Listen first. If you add three things, you broke the filter. Protect their focus.</div></div><div class="sl">What to expect</div><div class="wte"><div class="wte-row"><div class="wte-if">Manager validates</div><div class="wte-then">That's the confirmation. The filter is working.</div></div><div class="wte-row"><div class="wte-if">Manager pushes back</div><div class="wte-then">Good. Ask why. There's context you don't have yet.</div></div><div class="wte-row"><div class="wte-if">Manager adds more</div><div class="wte-then">Name it. Say: if I add this, what comes off?</div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div><div class="mt">Brought my filtered list to my 1:1. She helped me delegate one thing and pushed back on another. Worth it.</div><div class="mr">🔥 26 · 💬 9</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w4')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div></div></div>
-<div class="pg" id="bu-w4"><div class="inner"><div class="back" onclick="nav('bu-w3')">← Week 3</div><div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div><div class="sp"><div class="sb"><span>Bullseye > Week 4</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl">Do</div><div class="dt">Something new just landed. Before you say yes, run the filter on your full list.</div></div><div class="dd"><div class="dl">Post</div><div class="dt">Voice note or one sentence. What landed, what shifted, what you said.</div></div></div></div></div><div class="magnify" id="mag-bu-w4"><div class="mag-label">Manager Magnify · Week 4</div><div class="mag-text">When someone asks you to add something to your team's plate, run it through the filter out loud.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div><div class="mt" style="font-size:10px;color:var(--g);font-style:italic">"New project from the VP. Ran the filter. Not the right person. Moved it in 10 minutes."</div><div class="mr">🔥 28 · 💬 8</div></div></div><div class="post-conf" style="background:var(--bl);border:1px solid rgba(238,144,123,.2)"><div class="pc-label" style="color:var(--b)">Before you go</div><p>How confident are you in choosing what matters most when the list keeps growing?</p><div class="cds"><div class="cdd" onclick="sel(this)">1</div><div class="cdd" onclick="sel(this)">2</div><div class="cdd" onclick="sel(this)">3</div><div class="cdd" onclick="sel(this)">4</div><div class="cdd" onclick="sel(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div><div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div></div><div class="arc-close"><div class="arc-week">Week 4 of 4</div><div class="arc-msg">Four weeks. One filter. Your list will never look the same.</div><div class="arc-sub">Post in Mess Hall. Campfire is next week.</div></div><div class="cfe"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--b)">Campfire is next week</div></div></div></div>
-<div class="pg" id="gu"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up · Sign Up</span></div><div class="sy"><div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Lead through influence.<br>No title required.</div><div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">One question moves the room. That is the giddy up.</div><div class="cn2" style="background:rgba(197,123,138,.08)"><p>How confident are you in your ability to lead through influence right now?</p><div class="cds"><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">1</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">2</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">3</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">4</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div><div class="ep-wrap"><div class="ep-label">Pick your Mess Hall avatar</div><div class="ep-sub">This is you in #summer-camp-mess-hall. No names, no judgment.</div><div class="ep-grid" id="ep-gu"></div><div class="ep-chosen" id="ec-gu"><span class="ec-em" id="ec-gu-em"></span><span class="ec-txt">That's you. See you in Mess Hall.</span><span class="ec-change" onclick="resetEmoji('gu')">Change</span></div></div><div style="text-align:center;margin-top:10px"><button id="join-gu" onclick="joinCabin('gu','gu-w1')" style="background:var(--gu);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Giddy Up →</button></div></div></div></div></div>
-<div class="pg" id="gu-w1"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="ph"><span class="pl" style="background:rgba(197,123,138,.1);color:var(--gu)">Week 1: Feel the need</span></div><div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 1</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Think of the last meeting where the conversation drifted. Write the sentence you didn't say. Put it on paper. Real paper.</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Look</div><div class="dt">How long has that sentence been sitting with you?</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A photo of what you wrote. Mess Hall. This week.</div></div></div></div></div><div class="magnify" id="mag-gu-w1"><div class="mag-label">Manager Magnify · Week 1</div><div class="mag-text">Do this dare first. Leaders go first. Write the sentence you didn't say in your last leadership meeting.</div></div><div class="sl">This week</div><div class="nd" style="background:rgba(197,123,138,.08)"><div class="kt">Something happened in a meeting recently. You went along anyway. This week: write that sentence down.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div><div class="mi" style="background:rgba(197,123,138,.08);border-color:var(--gu);color:var(--gu)">✏️ [Your sentence on paper]</div><div class="mt" style="margin-top:6px">"We should slow down and validate this first."</div><div class="mr">🔥 19 · 💬 7</div></div></div><div class="done-card" style="background:rgba(197,123,138,.08);border-color:rgba(197,123,138,.2)"><div class="done-msg">You're done for this week. See you next Monday.</div><div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div></div></div></div>
-<div class="pg" id="gu-w2"><div class="inner"><div class="back" onclick="nav('gu-w1')">← Week 1</div><div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div><div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 2</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">Watch the Giddy Up 7taps. Swipe through all seven slides. Tap your answer on Slide 4.</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Write the question you would ask if that room reconvened tomorrow.</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div></div></div></div><div class="sl">7taps (swipe through)</div><div class="tp"><div class="tt" id="gu-ts"></div><div class="td2" id="gu-td"></div><div class="tnv"><button class="tnb" onclick="guTn(-1)">← Back</button><button class="tnb" onclick="guTn(1)">Next →</button></div></div><div class="magnify" id="mag-gu-w2"><div class="mag-label">Manager Magnify · Week 2</div><div class="mag-text">Watch the 7taps. Try the skill once before your team does. Ask one question before you state your position.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div><div class="mt">My question: "What are we optimizing for here?"</div><div class="mr">🔥 16 · 💬 5</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w3')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div></div></div>
-<div class="pg" id="gu-w3"><div class="inner"><div class="back" onclick="nav('gu-w2')">← Week 2</div><div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div><div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 3</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">In your next meeting, ask one question instead of stating your position. Use it once.</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">Does the room shift? Does it get dismissed? Does it open something?</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Two sentences. What you asked. What happened next.</div></div></div></div></div><div class="magnify" id="mag-gu-w3"><div class="mag-label">Manager Magnify · Week 3</div><div class="mag-text">Receive what your direct report brings. Ask: What did you ask? What happened? This is a debrief, not a rehearsal.</div></div><div class="sl">What to expect</div><div class="wte"><div class="wte-row"><div class="wte-if">Question lands and room shifts</div><div class="wte-then">You guided it. That is the skill.</div></div><div class="wte-row"><div class="wte-if">Question gets dismissed</div><div class="wte-then">Say: I want to make sure that idea gets considered. Can we come back to it?</div></div><div class="wte-row"><div class="wte-if">Question opens a thread</div><div class="wte-then">Keep pulling. Ask the follow-up.</div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div><div class="mt">Asked "what are we optimizing for here?" Room went quiet. Then someone said speed over quality. That was the skill.</div><div class="mr">🔥 31 · 💬 11</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w4')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div></div></div>
-<div class="pg" id="gu-w4"><div class="inner"><div class="back" onclick="nav('gu-w3')">← Week 3</div><div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div><div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 4</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">When the moment shows up this week, ask before you assert. One question. In the room.</div></div><div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Voice note (15 sec) or one sentence. What you asked. What shifted.</div></div></div></div></div><div class="magnify" id="mag-gu-w4"><div class="mag-label">Manager Magnify · Week 4</div><div class="mag-text">Use the skill visibly this week. Name it after: I asked that question instead of stating my position because I wanted to read the room first.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div><div class="mt" style="font-size:10px;color:var(--g);font-style:italic">"Room was drifting. Asked what we were optimizing for. Director said that was the right question. Whole meeting shifted."</div><div class="mr">🔥 34 · 💬 12</div></div></div><div class="post-conf" style="background:rgba(197,123,138,.08);border:1px solid rgba(197,123,138,.2)"><div class="pc-label" style="color:var(--gu)">Before you go</div><p>How confident are you in your ability to lead through influence right now?</p><div class="cds"><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">1</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">2</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">3</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">4</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div><div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div></div><div class="arc-close"><div class="arc-week">Week 4 of 4</div><div class="arc-msg">Four weeks. One question. Rooms don't drift the same way anymore.</div><div class="arc-sub">Post in Mess Hall. Campfire is next week.</div></div><div class="cfe" style="background:rgba(197,123,138,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--gu)">Campfire is next week</div></div></div></div>
-<div class="pg" id="cn"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball · Sign Up</span></div><div class="sy"><div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Decide with imperfect information.</div><div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">If you cannot name what you are testing for, you already have the answer.</div><div class="cn2" style="background:rgba(74,193,224,.08)"><p>How confident are you in your ability to decide with imperfect information right now?</p><div class="cds"><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">1</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">2</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">3</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">4</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div><div class="ep-wrap"><div class="ep-label">Pick your Mess Hall avatar</div><div class="ep-sub">This is you in #summer-camp-mess-hall. No names, no judgment.</div><div class="ep-grid" id="ep-cn"></div><div class="ep-chosen" id="ec-cn"><span class="ec-em" id="ec-cn-em"></span><span class="ec-txt">That's you. See you in Mess Hall.</span><span class="ec-change" onclick="resetEmoji('cn')">Change</span></div></div><div style="text-align:center;margin-top:10px"><button id="join-cn" onclick="joinCabin('cn','cn-w1')" style="background:var(--cn);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Cannonball →</button></div></div></div></div></div>
-<div class="pg" id="cn-w1"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="ph"><span class="pl" style="background:rgba(74,193,224,.1);color:var(--cn)">Week 1: Feel the need</span></div><div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 1</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Stand on one foot. Think of the decision you have been circling. Stay there as long as you can.</div></div><div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A photo of your toe. The number of days on the decision.</div></div></div></div></div><div class="magnify" id="mag-cn-w1"><div class="mag-label">Manager Magnify · Week 1</div><div class="mag-text">Do this dare first. Leaders go first. Name a decision you have been sitting on and the number of days.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div><div class="mt">Lasted 8 seconds. Vendor decision: 11 days.</div><div class="mr">🔥 23 · 💬 9</div></div></div><div class="done-card" style="background:rgba(74,193,224,.08);border-color:rgba(74,193,224,.2)"><div class="done-msg">You're done for this week. See you next Monday.</div></div></div></div>
-<div class="pg" id="cn-w2"><div class="inner"><div class="back" onclick="nav('cn-w1')">← Week 1</div><div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div><div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 2</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--cn)">Watch</div><div class="dt">Open the Cannonball 7taps. Swipe through all seven slides.</div></div><div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Name your own decision. What are you testing for?</div></div><div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div></div></div></div><div class="sl">7taps (swipe through)</div><div class="tp"><div class="tt" id="cn-ts"></div><div class="td2" id="cn-td"></div><div class="tnv"><button class="tnb" onclick="cnTn(-1)">← Back</button><button class="tnb" onclick="cnTn(1)">Next →</button></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div><div class="mt">Named my test: confident in vendor reliability? Yes. Jumped.</div><div class="mr">🔥 20 · 💬 7</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w3')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div></div></div>
-<div class="pg" id="cn-w3"><div class="inner"><div class="back" onclick="nav('cn-w2')">← Week 2</div><div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div><div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 3</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Pick a real decision. Name the question you are testing. Ask it. Bring what happened to your manager.</div></div><div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Two sentences. Your read. What you decided.</div></div></div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div><div class="mt">Jumped. Manager said that was a week faster than usual.</div><div class="mr">🔥 25 · 💬 8</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w4')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div></div></div>
-<div class="pg" id="cn-w4"><div class="inner"><div class="back" onclick="nav('cn-w3')">← Week 3</div><div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div><div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 4</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">When a decision lands, read it. Toe in, jump, or take the steps.</div></div><div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Voice note or one sentence. Your read. The move you made.</div></div></div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div><div class="mt" style="font-size:10px;color:var(--g);font-style:italic">"Budget reallocation landed. Named my test question. Had the answer in two minutes. Moved."</div><div class="mr">🔥 27 · 💬 9</div></div></div><div class="post-conf" style="background:rgba(74,193,224,.08);border:1px solid rgba(74,193,224,.2)"><div class="pc-label" style="color:var(--cn)">Before you go</div><p>How confident are you in your ability to decide with imperfect information right now?</p><div class="cds"><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">1</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">2</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">3</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">4</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div><div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div></div><div class="arc-close"><div class="arc-week">Week 4 of 4</div><div class="arc-msg">Four weeks. One question. Stalling looks different when you can name it.</div></div><div class="cfe" style="background:rgba(74,193,224,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--cn)">Campfire is next week</div></div></div></div>
-<div class="pg" id="th-signup"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="sp"><div class="sb"><span>Trailhead · Sign Up</span></div><div class="sy"><div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">No map. No GPS.</div><div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to read what's in front of you and pick a direction before someone draws the path for you.</div><div class="cn2" style="background:rgba(193,147,195,.08)"><p>How confident are you at choosing a direction when the path forward isn't clear?</p><div class="cds"><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">1</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">2</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">3</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">4</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div><div class="ep-wrap"><div class="ep-label">Pick your Mess Hall avatar</div><div class="ep-sub">This is you in #summer-camp-mess-hall. No names, no judgment.</div><div class="ep-grid" id="ep-th"></div><div class="ep-chosen" id="ec-th"><span class="ec-em" id="ec-th-em"></span><span class="ec-txt">That's you. See you in Mess Hall.</span><span class="ec-change" onclick="resetEmoji('th')">Change</span></div></div><div style="text-align:center;margin-top:10px"><button id="join-th" onclick="joinCabin('th','th-w1')" style="background:var(--tr);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Trailhead →</button></div></div></div></div></div>
-<div class="pg" id="th-w1"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div><div class="sp"><div class="sb"><span>Trailhead > Week 1</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Grab a blank piece of paper. Draw your biggest open question as a trail. No words. No labels. 60 seconds.</div></div><div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Photo of the trail map.</div></div></div></div></div><div class="magnify" id="mag-th-w1"><div class="mag-label">Manager Magnify · Week 1</div><div class="mag-text">Do this dare first. Draw your biggest open leadership question as a trail. Post it. Your team needs to see that you sit with uncertainty too.</div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div><div class="mt">Path disappears about halfway through.</div><div class="mr">🔥 17 · 💬 5</div></div></div><div class="done-card" style="background:rgba(193,147,195,.08);border-color:rgba(193,147,195,.2)"><div class="done-msg">You're done for this week. See you next Monday.</div></div></div></div>
-<div class="pg" id="th-w2"><div class="inner"><div class="back" onclick="nav('th-w1')">← Week 1</div><div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div><div class="sp"><div class="sb"><span>Trailhead > Week 2</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div><div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Read your own open question. Which layer applies: act, stake, or park?</div></div><div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div></div></div></div><div class="sl">7taps (swipe through)</div><div class="tp"><div class="tt" id="th-ts"></div><div class="td2" id="th-td"></div><div class="tnv"><button class="tnb" onclick="thTn(-1)">← Back</button><button class="tnb" onclick="thTn(1)">Next →</button></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div><div class="mt">Two things clear. Six things fog. One direction had movement.</div><div class="mr">🔥 14 · 💬 4</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('th-w3')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div></div></div>
-<div class="pg" id="th-w3"><div class="inner"><div class="back" onclick="nav('th-w2')">← Week 2</div><div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div><div class="sp"><div class="sb"><span>Trailhead > Week 3</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Pick your messiest open question. Read the terrain. Identify one thing to act on, stake, park. Bring it to your manager.</div></div><div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Two sentences. Your open question. Which layer you moved on.</div></div></div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div><div class="mt">Brought my terrain read to my 1:1. Manager added one constraint I hadn't seen. Worth the 10 minutes.</div><div class="mr">🔥 21 · 💬 7</div></div></div><div style="text-align:center;margin-top:12px"><button onclick="nav('th-w4')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div></div></div>
-<div class="pg" id="th-w4"><div class="inner"><div class="back" onclick="nav('th-w3')">← Week 3</div><div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div><div class="sp"><div class="sb"><span>Trailhead > Week 4</span></div><div class="sy"><div class="dr"><div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">When ambiguity shows up, read the terrain. Name what is act, stake, and park. Move on at least one.</div></div><div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Voice note or one sentence. What you moved on and what you parked.</div></div></div></div></div><div class="sl">Mess Hall</div><div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div><div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div><div class="mt" style="font-size:10px;color:var(--g);font-style:italic">"Inherited an undefined project. Two things clear. Picked a direction. She said go."</div><div class="mr">🔥 24 · 💬 6</div></div></div><div class="post-conf" style="background:rgba(193,147,195,.08);border:1px solid rgba(193,147,195,.2)"><div class="pc-label" style="color:var(--tr)">Before you go</div><p>How confident are you in your ability to navigate ambiguity right now?</p><div class="cds"><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">1</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">2</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">3</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">4</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">5</div></div><div class="cdl"><span>Not at all confident</span><span>Very confident</span></div><div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div></div><div class="arc-close"><div class="arc-week">Week 4 of 4</div><div class="arc-msg">Four weeks. One read. The fog didn't lift. You stopped waiting for it to.</div></div><div class="cfe" style="background:rgba(193,147,195,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--tr)">Campfire is next week</div></div></div></div>
-<div class="pg" id="names"><div class="inner"><div class="back" onclick="nav('home')">← Back to Camp</div><div class="sp"><div class="sy"><div style="font-size:14px;font-weight:700;color:var(--n);margin-bottom:4px">The four cabins</div><div class="ngg"><div class="ncc" style="background:rgba(197,123,138,.1)"><div class="nnm" style="color:var(--gu)">Giddy Up</div><div class="nsk">Lead through influence</div></div><div class="ncc" style="background:var(--bl)"><div class="nnm" style="color:var(--b)">Bullseye</div><div class="nsk">Prioritize what matters most</div></div><div class="ncc" style="background:rgba(74,193,224,.1)"><div class="nnm" style="color:var(--cn)">Cannonball</div><div class="nsk">Decide with imperfect info</div></div><div class="ncc" style="background:rgba(193,147,195,.1)"><div class="nnm" style="color:var(--tr)">Trailhead</div><div class="nsk">Navigate ambiguity</div></div></div></div></div></div></div>
+<div style="text-align:center;margin-top:10px"><button id="join-bu" onclick="joinCabin('bu','bu-w1')" style="background:var(--b);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Bullseye →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 1 -->
+<div class="pg" id="bu-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Grab one square of toilet paper. Write your priorities. Just what fits.</div></div>
+<div class="dd"><div class="dl">Look</div><div class="dt">Look at your real to-do list. What didn't make the square?</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Photo of the square.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-bu-w1">
+  <div class="mag-label">Manager Magnify · Week 1</div>
+  <div class="mag-text">Do the toilet paper dare yourself. Post yours before your team posts theirs. When they see their manager's square has the same gap, the dare becomes real. Leaders go first.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">Grabbed your square yet? Doesn't have to be pretty. If most of it fits, you might already be good at this. If it doesn't, welcome to the dare.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mi">🧻 [Your toilet paper square]<br>3 priorities. One tiny square.</div>
+<div class="mt" style="margin-top:6px">3 things fit. My real list has 11. That square told me a lot.</div>
+<div class="mr">🔥 22 · 💬 6</div></div></div>
+<div class="done-card">
+ 
+  <div class="done-msg">You're done for this week. See you next Monday.</div>
+  <div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div>
+</div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 2 -->
+<div class="pg" id="bu-w2">
+<div class="inner">
+<div class="back" onclick="nav('bu-w1')">← Week 1</div>
+<div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div>
+<div class="dd"><div class="dl">Do</div><div class="dt">Run the filter on your real list. Cross out what doesn't pass.</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Screenshot of your crossed-out list.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="ts3"></div><div class="td2" id="td3"></div>
+<div class="tnv"><button class="tnb" onclick="tn2(-1)">← Back</button><button class="tnb" onclick="tn2(1)">Next →</button></div></div>
+<div class="magnify" id="mag-bu-w2">
+  <div class="mag-label">Manager Magnify · Week 2</div>
+  <div class="mag-text">Run your list before your team does. Notice what does not make the cut. Bring that to your Week 3 conversation with your direct report.</div>
+</div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mi">📋 [Your crossed-out list]<br>7 crossed out. 3 still standing.</div>
+<div class="mt" style="margin-top:6px">10 targets. 3 survived. The other 7 can wait. Apparently.</div>
+<div class="mr">🔥 18 · 💬 5</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w3')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 3 -->
+<div class="pg" id="bu-w3">
+<div class="inner">
+<div class="back" onclick="nav('bu-w2')">← Week 2</div>
+<div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Bring your filtered list to your next 1:1. Say: Here is what I think can shift. What am I missing?</div></div>
+<div class="dd"><div class="dl">Watch</div><div class="dt">What your manager validates. What they push back on.</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Two sentences. What you brought. What your manager said.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-bu-w3">
+  <div class="mag-label">Manager Magnify · Week 3</div>
+  <div class="mag-text">Your direct report brings you their filtered list. Listen first. Validate what they got right. Push back where needed. If they bring a prioritized list and you add three things, you broke the filter. Protect their focus.</div>
+</div>
+<div class="sl">What to expect</div>
+<div class="wte">
+  <div class="wte-row"><div class="wte-if">Manager validates</div><div class="wte-then">That's the confirmation. You read it right. The filter is working.</div></div>
+  <div class="wte-row"><div class="wte-if">Manager pushes back</div><div class="wte-then">Good. Ask why. There's context you don't have yet. That's the conversation.</div></div>
+  <div class="wte-row"><div class="wte-if">Manager adds more</div><div class="wte-then">Name it. Say: if I add this, what comes off? The filter still applies.</div></div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">Your next 1:1 is the moment. Start with: here's what I think can shift. Most managers move faster when someone shows up with a read, not just a question.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">Brought my filtered list to my 1:1. She helped me delegate one thing and pushed back on another. Ten minutes. Worth it.</div>
+<div class="mr">🔥 26 · 💬 9</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--gu)">MK</div><span class="un">Maya K.</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mt">Guided the conversation instead of going along. My skip-level said "I'm glad you brought this up."</div>
+<div class="mr">🔥 31 · 💬 11</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('bu-w4')" style="background:var(--b);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- BULLSEYE WEEK 4 -->
+<div class="pg" id="bu-w4">
+<div class="inner">
+<div class="back" onclick="nav('bu-w3')">← Week 3</div>
+<div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb"><span>Bullseye > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl">Do</div><div class="dt">Something new just landed on your plate. Before you say yes, run the filter on your full list.</div></div>
+<div class="dd"><div class="dl">Think</div><div class="dt">What shifts to make room? What conversation do you need with your manager?</div></div>
+<div class="dd"><div class="dl">Post</div><div class="dt">Voice note (15 sec) or one sentence. What landed, what shifted, what you said.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-bu-w4">
+  <div class="mag-label">Manager Magnify · Week 4</div>
+  <div class="mag-text">When someone asks you to add something to your team's plate, run it through the filter out loud. Let your team hear you use the tool. If you keep saying yes to requests that don't pass the filter, your team learns the filter doesn't apply to leaders.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">Anything new land on your plate this week? Before you say yes, run the filter. You have been practicing this for three weeks. See how it feels.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="bu" style="background:var(--b)">You</div><span class="un">You</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="vc"><div class="vp"></div><div class="vbs"><div class="vbr" style="height:6px"></div><div class="vbr" style="height:11px"></div><div class="vbr" style="height:17px"></div><div class="vbr" style="height:9px"></div><div class="vbr" style="height:15px"></div><div class="vbr" style="height:20px"></div><div class="vbr" style="height:7px"></div><div class="vbr" style="height:13px"></div><div class="vbr" style="height:18px"></div><div class="vbr" style="height:5px"></div></div><span class="vtm">0:14</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"New project from the VP. Ran the filter. Drives a result we need but I'm not the right person. Talked to my manager. She helped move it to another team in about 10 minutes."</div>
+<div class="mr">🔥 28 · 💬 8 · 🎯 5</div></div></div>
+<div class="post-conf" style="background:var(--bl);border:1px solid rgba(238,144,123,.2)">
+  <div class="pc-label" style="color:var(--b)">Before you go</div>
+  <p>How confident are you in choosing what matters most when the list keeps growing?</p>
+  <div class="cds"><div class="cdd" onclick="sel(this)">1</div><div class="cdd" onclick="sel(this)">2</div><div class="cdd" onclick="sel(this)">3</div><div class="cdd" onclick="sel(this)">4</div><div class="cdd" onclick="sel(this)">5</div></div>
+  <div class="cdl"><span>Not at all confident</span><span>Very confident</span></div>
+  <div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div>
+</div>
+<div class="arc-close">
+  <div class="arc-week">Week 4 of 4</div>
+  <div class="arc-msg">Four weeks. One filter. Your list will never look the same.</div>
+  <div class="arc-sub">Post in Mess Hall. Campfire is next week.</div>
+</div>
+<div class="cfe"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--b)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+</div>
+</div>
+
+<!-- PLACEHOLDER PAGES -->
+<!-- GIDDY UP SIGN-UP -->
+<div class="pg" id="gu">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Lead through influence.<br>No title required.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">One question moves the room. That is the giddy up. This is the practice of turning your read into one question, not a takeover.</div>
+<div class="cn2" style="background:rgba(197,123,138,.08)"><p>How confident are you in your ability to lead through influence right now?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">1</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">2</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">3</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">4</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">5</div></div>
+<div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div>
+<div class="ep-wrap">
+  <div class="ep-label">Pick your Mess Hall avatar</div>
+  <div class="ep-sub">This is you in #summer-camp-mess-hall. Everyone posts under their avatar — no names, no judgment. Pick one and it's locked to you for the summer.</div>
+  <div class="ep-grid" id="ep-gu"></div>
+  <div class="ep-chosen" id="ec-gu">
+    <span class="ec-em" id="ec-gu-em"></span>
+    <span class="ec-txt">That's you. See you in Mess Hall.</span>
+    <span class="ec-change" onclick="resetEmoji('gu')">Change</span>
+  </div>
+</div>
+<div style="text-align:center;margin-top:10px"><button id="join-gu" onclick="joinCabin('gu','gu-w1')" style="background:var(--gu);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Giddy Up →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 1 -->
+<div class="pg" id="gu-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl" style="background:rgba(197,123,138,.1);color:var(--gu)">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Think of the last meeting where the conversation drifted. Write the sentence you didn't say. Put it on paper. Real paper.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Look</div><div class="dt">How long has that sentence been sitting with you?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A photo of what you wrote. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-gu-w1">
+  <div class="mag-label">Manager Magnify · Week 1</div>
+  <div class="mag-text">Do this dare first. Leaders go first. Write the sentence you didn't say in your last leadership meeting. Post it. Your team needs to see it is safe to name what went unsaid.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="kt">Something happened in a meeting recently. The conversation went sideways. You saw it. You had the words. You went along anyway. This week: write that sentence down.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mi" style="background:rgba(197,123,138,.08);border-color:var(--gu);color:var(--gu)">✏️ [Your sentence on paper]</div>
+<div class="mt" style="margin-top:6px">"We should slow down and validate this first." Been sitting with that one for two weeks.</div>
+<div class="mr">🔥 19 · 💬 7</div></div></div>
+<div class="done-card" style="background:rgba(197,123,138,.08);border-color:rgba(197,123,138,.2)">
+ 
+  <div class="done-msg">You're done for this week. See you next Monday.</div>
+  <div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div>
+</div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 2 -->
+<div class="pg" id="gu-w2">
+<div class="inner">
+<div class="back" onclick="nav('gu-w1')">← Week 1</div>
+<div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">Watch the Giddy Up 7taps. Swipe through all seven slides. Tap your answer on Slide 4.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">Write the question you would ask if that room reconvened tomorrow. One sentence.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="gu-ts"></div><div class="td2" id="gu-td"></div>
+<div class="tnv"><button class="tnb" onclick="guTn(-1)">← Back</button><button class="tnb" onclick="guTn(1)">Next →</button></div></div>
+<div class="magnify" id="mag-gu-w2">
+  <div class="mag-label">Manager Magnify · Week 2</div>
+  <div class="mag-text">Watch the 7taps. Try the skill once before your team does. In your next cross-functional meeting: ask one question before you state your position. Notice what shifts. Use that as your opening in the Week 3 conversation with your direct report.</div>
+</div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mi" style="background:rgba(197,123,138,.08);border-color:var(--gu);color:var(--gu)">📱 [Your Slide 4 answer]</div>
+<div class="mt" style="margin-top:6px">Tapped B. My question for tomorrow: "What are we optimizing for here?"</div>
+<div class="mr">🔥 16 · 💬 5</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w3')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 3 -->
+<div class="pg" id="gu-w3">
+<div class="inner">
+<div class="back" onclick="nav('gu-w2')">← Week 2</div>
+<div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">In your next cross-functional or team meeting, ask one question instead of stating your position. Use it once.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">What happens after you ask it? Does the room shift? Does it get dismissed? Does it open something?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Two sentences. What you asked. What happened next.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-gu-w3">
+  <div class="mag-label">Manager Magnify · Week 3</div>
+  <div class="mag-text">Receive what your direct report brings. Ask: What did you ask? What happened? What did you almost say instead? What changed when you asked it? This is a debrief, not a rehearsal.</div>
+</div>
+<div class="sl">What to expect</div>
+<div class="wte">
+  <div class="wte-row"><div class="wte-if">Question lands and the room shifts</div><div class="wte-then">You guided it. That is the skill.</div></div>
+  <div class="wte-row"><div class="wte-if">Question gets dismissed</div><div class="wte-then">Name it. Say: I want to make sure that idea gets considered. Can we come back to it?</div></div>
+  <div class="wte-row"><div class="wte-if">Question opens a thread</div><div class="wte-then">Keep pulling. Ask the follow-up.</div></div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="kt">Here is your rep. Pick a meeting this week. Real one. Use the skill once. Then tell your manager what happened. Not what you planned. What actually happened.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="mt">Asked "what are we optimizing for here?" Room went quiet for about five seconds. Then someone said speed over quality. Conversation shifted. That was the skill.</div>
+<div class="mr">🔥 31 · 💬 11</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('gu-w4')" style="background:var(--gu);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- GIDDY UP WEEK 4 -->
+<div class="pg" id="gu-w4">
+<div class="inner">
+<div class="back" onclick="nav('gu-w3')">← Week 3</div>
+<div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb" style="background:var(--gu)"><span>Giddy Up > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--gu)">Do</div><div class="dt">When the moment shows up this week, ask before you assert. One question. In the room.</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Watch</div><div class="dt">What did you almost say instead?</div></div>
+<div class="dd"><div class="dl" style="color:var(--gu)">Post</div><div class="dt">Voice note (15 sec) or one sentence. What you asked. What shifted.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-gu-w4">
+  <div class="mag-label">Manager Magnify · Week 4</div>
+  <div class="mag-text">Use the skill visibly this week. In a meeting your team can see. Name it after: I asked that question instead of stating my position because I wanted to read the room first. That sentence changes how your team leads.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(197,123,138,.08)"><div class="kt">This week the dare finds you. A meeting that drifts. A decision that needs a push. A room that needs a read. Use the skill. No setup. No prep. Just one question.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="gu" style="background:var(--gu)">You</div><span class="un">You</span><span class="ut" style="background:var(--gu)">Giddy Up</span></div>
+<div class="vc" style="background:rgba(197,123,138,.1)"><div class="vp" style="background:var(--gu)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--gu)"></div><div class="vbr" style="height:11px;background:var(--gu)"></div><div class="vbr" style="height:17px;background:var(--gu)"></div><div class="vbr" style="height:9px;background:var(--gu)"></div><div class="vbr" style="height:15px;background:var(--gu)"></div><div class="vbr" style="height:20px;background:var(--gu)"></div><div class="vbr" style="height:7px;background:var(--gu)"></div></div><span class="vtm" style="color:var(--gu)">0:13</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Room was drifting. Almost said my position. Asked what we were optimizing for instead. Director said that was the right question. Whole meeting shifted."</div>
+<div class="mr">🔥 34 · 💬 12</div></div></div>
+<div class="post-conf" style="background:rgba(197,123,138,.08);border:1px solid rgba(197,123,138,.2)">
+  <div class="pc-label" style="color:var(--gu)">Before you go</div>
+  <p>How confident are you in your ability to lead through influence right now?</p>
+  <div class="cds"><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">1</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">2</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">3</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">4</div><div class="cdd" style="border-color:var(--gu);color:var(--gu)" onclick="selGu(this)">5</div></div>
+  <div class="cdl"><span>Not at all confident</span><span>Very confident</span></div>
+  <div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div>
+</div>
+<div class="arc-close">
+  <div class="arc-week">Week 4 of 4</div>
+  <div class="arc-msg">Four weeks. One question. Rooms don't drift the same way anymore.</div>
+  <div class="arc-sub">Post in Mess Hall. Campfire is next week.</div>
+</div>
+<div class="cfe" style="background:rgba(197,123,138,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--gu)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+</div>
+</div>
+<!-- CANNONBALL SIGN-UP -->
+<div class="pg" id="cn">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">Decide with imperfect information.<br>Without stalling.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Toe in, jump, or take the steps. A test has a question. If you cannot name what you are testing for, you already have the answer.</div>
+<div class="cn2" style="background:rgba(74,193,224,.08)"><p>How confident are you in your ability to decide with imperfect information right now?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">1</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">2</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">3</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">4</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">5</div></div>
+<div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div>
+<div class="ep-wrap">
+  <div class="ep-label">Pick your Mess Hall avatar</div>
+  <div class="ep-sub">This is you in #summer-camp-mess-hall. Everyone posts under their avatar — no names, no judgment. Pick one and it's locked to you for the summer.</div>
+  <div class="ep-grid" id="ep-cn"></div>
+  <div class="ep-chosen" id="ec-cn">
+    <span class="ec-em" id="ec-cn-em"></span>
+    <span class="ec-txt">That's you. See you in Mess Hall.</span>
+    <span class="ec-change" onclick="resetEmoji('cn')">Change</span>
+  </div>
+</div>
+<div style="text-align:center;margin-top:10px"><button id="join-cn" onclick="joinCabin('cn','cn-w1')" style="background:var(--cn);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Cannonball →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 1 -->
+<div class="pg" id="cn-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl" style="background:rgba(74,193,224,.1);color:var(--cn)">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Stand on one foot. Dip your toe toward the floor. Hold it. Think of the decision you have been circling. Stay there as long as you can.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Look</div><div class="dt">Can you name what you are testing for? If not, that is not a test.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A photo of your toe. The number of days you have been sitting on the decision.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-cn-w1">
+  <div class="mag-label">Manager Magnify · Week 1</div>
+  <div class="mag-text">Do this dare first. Leaders go first. Name a decision you have been sitting on and the number of days. Your team needs to see that leaders mistake stalling for testing too.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="kt">You have a decision you have been circling. Not a hard one. One you already have enough to make. This week: feel what that costs you.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mi" style="background:rgba(74,193,224,.08);border-color:var(--cn);color:var(--cn)">🦶 [Your toe photo] · 11 days</div>
+<div class="mt" style="margin-top:6px">Lasted 8 seconds. Been sitting on that vendor decision for 11 days. My body knew before I did.</div>
+<div class="mr">🔥 23 · 💬 9</div></div></div>
+<div class="done-card" style="background:rgba(74,193,224,.08);border-color:rgba(74,193,224,.2)">
+ 
+  <div class="done-msg">You're done for this week. See you next Monday.</div>
+  <div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div>
+</div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 2 -->
+<div class="pg" id="cn-w2">
+<div class="inner">
+<div class="back" onclick="nav('cn-w1')">← Week 1</div>
+<div class="ph"><span class="pl" style="background:var(--tl);color:var(--t)">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Watch</div><div class="dt">Open the Cannonball 7taps. Swipe through all seven slides. Tap your answer on Slide 4.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Name your own decision. What are you testing for? Can you say it in one sentence?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="cn-ts"></div><div class="td2" id="cn-td"></div>
+<div class="tnv"><button class="tnb" onclick="cnTn(-1)">← Back</button><button class="tnb" onclick="cnTn(1)">Next →</button></div></div>
+<div class="magnify" id="mag-cn-w2">
+  <div class="mag-label">Manager Magnify · Week 2</div>
+  <div class="mag-text">Watch the 7taps. Try the read on a real decision before your team does. Notice whether you can name what you are testing for. Bring that to your Week 3 conversation with your direct report.</div>
+</div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mi" style="background:rgba(74,193,224,.08);border-color:var(--cn);color:var(--cn)">📱 [Your Slide 4 answer]</div>
+<div class="mt" style="margin-top:6px">Tapped B. Named my test question: am I confident in this vendor's reliability? Turns out yes. I've known that for a week. Jumped.</div>
+<div class="mr">🔥 20 · 💬 7</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w3')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 3 -->
+<div class="pg" id="cn-w3">
+<div class="inner">
+<div class="back" onclick="nav('cn-w2')">← Week 2</div>
+<div class="ph"><span class="pl" style="background:#E8F5E8;color:#2D6A2D">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">Pick a real decision this week. If you are toe in, name the question you are testing. Ask it. Then bring what happened to your manager.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Watch</div><div class="dt">Did naming the test question change how fast you moved?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Two sentences. Your read. What you decided.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-cn-w3">
+  <div class="mag-label">Manager Magnify · Week 3</div>
+  <div class="mag-text">Receive what your direct report brings. Do not make their decision for them. Ask: What were you testing for? Did you get the answer? This is a debrief, not a consult.</div>
+</div>
+<div class="sl">What to expect</div>
+<div class="wte">
+  <div class="wte-row"><div class="wte-if">You named the question and jumped</div><div class="wte-then">That is the skill. You had the answer. You just needed to see it.</div></div>
+  <div class="wte-row"><div class="wte-if">You named the question and stayed toe in</div><div class="wte-then">Good. You are testing deliberately now. Name your deadline. I will have an answer by Thursday.</div></div>
+  <div class="wte-row"><div class="wte-if">You could not name the question</div><div class="wte-then">That is the most important finding. Bring that to your manager. That is the conversation.</div></div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="kt">Named your test question yet? If you can say it in one sentence, you're closer to the answer than you think. Bring what you found to your manager.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="mt">Toe in on the agency decision. Named my test: am I confident in their process? Yes. Jumped. Manager said that was a week faster than usual.</div>
+<div class="mr">🔥 25 · 💬 8</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('cn-w4')" style="background:var(--cn);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- CANNONBALL WEEK 4 -->
+<div class="pg" id="cn-w4">
+<div class="inner">
+<div class="back" onclick="nav('cn-w3')">← Week 3</div>
+<div class="ph"><span class="pl" style="background:#F5EDF5;color:#6A2D6A">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb" style="background:var(--cn)"><span>Cannonball > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--cn)">Do</div><div class="dt">When a decision lands this week, ask yourself: am I still testing or have I had the answer for a while? Name it. Then move.</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Think</div><div class="dt">What would you have done without the read?</div></div>
+<div class="dd"><div class="dl" style="color:var(--cn)">Post</div><div class="dt">Voice note (15 sec) or one sentence. Your read. The move you made.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-cn-w4">
+  <div class="mag-label">Manager Magnify · Week 4</div>
+  <div class="mag-text">Use the read visibly this week. In a meeting your team can see. Name it: I am toe in on this. Here is what I am testing for. I will have an answer by Thursday. That sentence is what good decision-making looks like out loud.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd" style="background:rgba(74,193,224,.08)"><div class="kt">No dare this week. A decision will show up. Something real. Something you will want to test. Name what you are testing for before you dip your toe in.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="cn" style="background:var(--cn)">You</div><span class="un">You</span><span class="ut" style="background:var(--cn)">Cannonball</span></div>
+<div class="vc" style="background:rgba(74,193,224,.1)"><div class="vp" style="background:var(--cn)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--cn)"></div><div class="vbr" style="height:11px;background:var(--cn)"></div><div class="vbr" style="height:17px;background:var(--cn)"></div><div class="vbr" style="height:9px;background:var(--cn)"></div><div class="vbr" style="height:15px;background:var(--cn)"></div><div class="vbr" style="height:20px;background:var(--cn)"></div><div class="vbr" style="height:7px;background:var(--cn)"></div></div><span class="vtm" style="color:var(--cn)">0:11</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Budget reallocation landed. Read it as a jump -- reversible if Q3 shifts. Named my test question. Had the answer in under two minutes. Moved."</div>
+<div class="mr">🔥 27 · 💬 9</div></div></div>
+<div class="post-conf" style="background:rgba(74,193,224,.08);border:1px solid rgba(74,193,224,.2)">
+  <div class="pc-label" style="color:var(--cn)">Before you go</div>
+  <p>How confident are you in your ability to decide with imperfect information right now?</p>
+  <div class="cds"><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">1</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">2</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">3</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">4</div><div class="cdd" style="border-color:var(--cn);color:var(--cn)" onclick="selCn(this)">5</div></div>
+  <div class="cdl"><span>Not at all confident</span><span>Very confident</span></div>
+  <div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div>
+</div>
+<div class="arc-close">
+  <div class="arc-week">Week 4 of 4</div>
+  <div class="arc-msg">Four weeks. One question. Stalling looks different when you can name it.</div>
+  <div class="arc-sub">Post in Mess Hall. Campfire is next week.</div>
+</div>
+<div class="cfe" style="background:rgba(74,193,224,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--cn)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+</div>
+</div>
+
+<!-- TRAILHEAD SIGN-UP -->
+<div class="pg" id="th-signup">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sb"><span>Trailhead · Sign Up</span></div>
+<div class="sy">
+<div style="font-size:20px;font-weight:800;color:var(--n);line-height:1.3;margin-bottom:8px">No map. No GPS.</div>
+<div style="font-size:12px;color:#666;line-height:1.7;margin-bottom:14px">Learn to read what's in front of you and pick a direction before someone draws the path for you. Ambiguity is not a problem. It's terrain.</div>
+<div class="cn2" style="background:rgba(193,147,195,.08)"><p>How confident are you at choosing a direction when the path forward isn't clear?</p>
+<div class="cds"><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">1</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">2</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">3</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">4</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">5</div></div>
+<div class="cdl"><span>Not at all confident</span><span>Very confident</span></div></div>
+<div class="ep-wrap">
+  <div class="ep-label">Pick your Mess Hall avatar</div>
+  <div class="ep-sub">This is you in #summer-camp-mess-hall. Everyone posts under their avatar — no names, no judgment. Pick one and it's locked to you for the summer.</div>
+  <div class="ep-grid" id="ep-th"></div>
+  <div class="ep-chosen" id="ec-th">
+    <span class="ec-em" id="ec-th-em"></span>
+    <span class="ec-txt">That's you. See you in Mess Hall.</span>
+    <span class="ec-change" onclick="resetEmoji('th')">Change</span>
+  </div>
+</div>
+<div style="text-align:center;margin-top:10px"><button id="join-th" onclick="joinCabin('th','th-w1')" style="background:var(--tr);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.5;pointer-events:none">Join Trailhead →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 1 -->
+<div class="pg" id="th-w1">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="ph"><span class="pl pl-f">Week 1: Feel the need</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 1</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Grab a blank piece of paper. Draw your biggest open question at work as a trail. No words. No labels. Just terrain. 60 seconds. Think: squiggly lines. Forks. Dead ends. Where does the path go?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Look</div><div class="dt">Where does the trail stop? Where does it branch?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Photo of the trail map.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-th-w1">
+  <div class="mag-label">Manager Magnify · Week 1</div>
+  <div class="mag-text">Do this dare first. Leaders go first. Draw your biggest open leadership question as a trail. Post it. Your team needs to see that you sit with uncertainty too.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">Drew your trail yet? Doesn't have to look like a real map. If the path is clear all the way to the end, you might already be good at this. If it runs out somewhere in the middle, welcome to the dare.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mi" style="background:rgba(193,147,195,.08);border-color:var(--tr);color:var(--tr)">🗺️ [Your trail map]<br>Path ends about halfway through.</div>
+<div class="mt" style="margin-top:6px">Drew my current project. The path disappears about halfway through. That felt about right.</div>
+<div class="mr">🔥 17 · 💬 5</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">LN</div><span class="un">Lesley N.</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">3 things fit on the square. My real list has 11. That toilet paper said a lot.</div>
+<div class="mr">🔥 22 · 💬 6</div></div></div>
+<div class="done-card" style="background:rgba(193,147,195,.08);border-color:rgba(193,147,195,.2)">
+ 
+  <div class="done-msg">You're done for this week. See you next Monday.</div>
+  <div class="done-sub">If you haven't posted yet, do it now. Then you're done.</div>
+</div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 2 -->
+<div class="pg" id="th-w2">
+<div class="inner">
+<div class="back" onclick="nav('th-w1')">← Week 1</div>
+<div class="ph"><span class="pl pl-s">Week 2: See the skill</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 2</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">The walkthrough below. 2 minutes.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Read your own open question. Which layer applies: act, stake, or park?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">A screenshot of your Slide 4 answer. Mess Hall. This week.</div></div>
+</div></div></div>
+<div class="sl">7taps (swipe through)</div>
+<div class="tp"><div class="tt" id="th-ts"></div><div class="td2" id="th-td"></div>
+<div class="tnv"><button class="tnb" onclick="thTn(-1)">← Back</button><button class="tnb" onclick="thTn(1)">Next →</button></div></div>
+<div class="magnify" id="mag-th-w2">
+  <div class="mag-label">Manager Magnify · Week 2</div>
+  <div class="mag-text">Watch the 7taps. Try the three-layer read on a real ambiguous situation before your team does. Notice where you personally get stuck: act, stake, or park. Use that as your opening in the Week 3 conversation with your direct report.</div>
+</div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mi" style="background:rgba(193,147,195,.08);border-color:var(--tr);color:var(--tr)">🗺️ [Your annotated map]<br>Two things clear. Six things fog.</div>
+<div class="mt" style="margin-top:6px">Two things were clear. Six things were fog. One direction had movement. That's where I'm going.</div>
+<div class="mr">🔥 14 · 💬 4</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('th-w3')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 3 →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 3 -->
+<div class="pg" id="th-w3">
+<div class="inner">
+<div class="back" onclick="nav('th-w2')">← Week 2</div>
+<div class="ph"><span class="pl pl-a">Week 3: Apply it</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 3</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">Pick your messiest open question at work. Read the terrain. Identify one thing you can act on, one thing to stake, one thing to park. Bring it to your manager.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">Which layer was hardest to name?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Two sentences. Your open question. Which layer you moved on.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-th-w3">
+  <div class="mag-label">Manager Magnify · Week 3</div>
+  <div class="mag-text">Receive what your direct report brings. Do not clean it up for them. Ask: What did you decide to act on? What are you parking? Why? This is a debrief, not a planning session.</div>
+</div>
+<div class="sl">What to expect</div>
+<div class="wte">
+  <div class="wte-row"><div class="wte-if">Manager confirms your read</div><div class="wte-then">You read the terrain right. That is the skill working.</div></div>
+  <div class="wte-row"><div class="wte-if">Manager adds a constraint you missed</div><div class="wte-then">Good. Adjust the read. That is what the conversation is for.</div></div>
+  <div class="wte-row"><div class="wte-if">Manager reframes the question entirely</div><div class="wte-then">Name it: I was reading the wrong terrain. Now you have a cleaner map. Start there.</div></div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">Your next 1:1 is the moment. Show up with a direction, not just the fog. Your manager can work with a direction. They can't work with "I don't know yet."</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="mt">Brought my terrain read to my 1:1. My manager added one constraint I hadn't seen. Changed my direction. Worth the 10 minutes.</div>
+<div class="mr">🔥 21 · 💬 7</div></div>
+<div class="mp"><div class="mu"><div class="av" style="background:var(--b)">LN</div><span class="un">Lesley N.</span><span class="ut" style="background:var(--b)">Bullseye</span></div>
+<div class="mt">Brought my filtered list to my 1:1. She helped me delegate one thing and pushed back on another. Ten minutes. Worth it.</div>
+<div class="mr">🔥 26 · 💬 9</div></div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="nav('th-w4')" style="background:var(--tr);color:#fff;border:none;padding:6px 18px;border-radius:16px;font-size:10px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Next: Week 4 →</button></div>
+</div>
+</div>
+
+<!-- TRAILHEAD WEEK 4 -->
+<div class="pg" id="th-w4">
+<div class="inner">
+<div class="back" onclick="nav('th-w3')">← Week 3</div>
+<div class="ph"><span class="pl pl-r">Week 4: Use it live</span></div>
+<div class="sp"><div class="sb"><span>Trailhead > Week 4</span></div>
+<div class="sy"><div class="dr">
+<div class="dd"><div class="dl" style="color:var(--tr)">Do</div><div class="dt">When ambiguity shows up this week, read the terrain. Name what is act, stake, and park. Move on at least one.</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Watch</div><div class="dt">What would you have done without the read?</div></div>
+<div class="dd"><div class="dl" style="color:var(--tr)">Post</div><div class="dt">Voice note (15 sec) or one sentence. What you moved on and what you parked.</div></div>
+</div></div></div>
+<div class="magnify" id="mag-th-w4">
+  <div class="mag-label">Manager Magnify · Week 4</div>
+  <div class="mag-text">Use the skill visibly this week. In a moment your team can see. Name it: I am not waiting for full clarity here. Here is what I can act on. Here is what I am parking. That sentence gives your team permission to do the same.</div>
+</div>
+<div class="sl">This week</div>
+<div class="nd"><div class="kt">This week the dare finds you. Ambiguity will show up. A project without a clear brief. A conversation that needs direction. A question nobody is answering. Read the terrain. Move on what you can.</div></div>
+<div class="sl">Mess Hall</div>
+<div class="ms"><div class="ms-h"><span class="h">#</span><span class="c">summer-camp-mess-hall</span></div>
+<div class="mp"><div class="mu"><div class="av" data-you="th" style="background:var(--tr)">You</div><span class="un">You</span><span class="ut" style="background:var(--tr)">Trailhead</span></div>
+<div class="vc" style="background:rgba(193,147,195,.1)"><div class="vp" style="background:var(--tr)"></div><div class="vbs"><div class="vbr" style="height:6px;background:var(--tr)"></div><div class="vbr" style="height:11px;background:var(--tr)"></div><div class="vbr" style="height:17px;background:var(--tr)"></div><div class="vbr" style="height:9px;background:var(--tr)"></div><div class="vbr" style="height:15px;background:var(--tr)"></div><div class="vbr" style="height:20px;background:var(--tr)"></div><div class="vbr" style="height:7px;background:var(--tr)"></div><div class="vbr" style="height:13px;background:var(--tr)"></div><div class="vbr" style="height:18px;background:var(--tr)"></div><div class="vbr" style="height:5px;background:var(--tr)"></div></div><span class="vtm" style="color:var(--tr)">0:12</span></div>
+<div class="mt" style="margin-top:6px;font-size:10px;color:var(--g);font-style:italic">"Inherited an undefined project. Ran the terrain read. Two things were clear. Picked a direction. Sent my manager one sentence. She said go."</div>
+<div class="mr">🔥 24 · 💬 6 · 🧭 8</div></div></div>
+<div class="post-conf" style="background:rgba(193,147,195,.08);border:1px solid rgba(193,147,195,.2)">
+  <div class="pc-label" style="color:var(--tr)">Before you go</div>
+  <p>How confident are you in your ability to navigate ambiguity right now?</p>
+  <div class="cds"><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">1</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">2</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">3</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">4</div><div class="cdd" style="border-color:var(--tr);color:var(--tr)" onclick="selTh(this)">5</div></div>
+  <div class="cdl"><span>Not at all confident</span><span>Very confident</span></div>
+  <div class="pc-sub">You answered this at sign-up. Your answer now is the data.</div>
+</div>
+<div class="arc-close">
+  <div class="arc-week">Week 4 of 4</div>
+  <div class="arc-msg">Four weeks. One read. The fog didn't lift. You stopped waiting for it to.</div>
+  <div class="arc-sub">Post in Mess Hall. Campfire is next week.</div>
+</div>
+<div class="cfe" style="background:rgba(193,147,195,.1)"><div style="font-size:18px;margin-bottom:2px">🔥</div><div style="font-size:11px;font-weight:600;color:var(--tr)">Campfire is next week</div><div style="font-size:9px;color:var(--g)">Bring a story. Everyone gathers.</div></div>
+</div>
+</div>
+
+<!-- NAMES -->
+<div class="pg" id="names">
+<div class="inner">
+<div class="back" onclick="nav('home')">← Back to Camp</div>
+<div class="sp"><div class="sy">
+<div style="font-size:14px;font-weight:700;color:var(--n);margin-bottom:4px">The four cabins</div>
+<div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:10px">Each one teaches a different skill. Do these feel like something you'd sign up for?</div>
+<div class="ngg">
+<div class="ncc" style="background:rgba(197,123,138,.1)"><div class="nnm" style="color:var(--gu)">Giddy Up</div><div class="nsk">Lead through influence</div><div class="nds">Guide people your direction without being the boss</div></div>
+<div class="ncc" style="background:var(--bl)"><div class="nnm" style="color:var(--b)">Bullseye</div><div class="nsk">Prioritize what matters most</div><div class="nds">Focus when everything feels urgent</div></div>
+<div class="ncc" style="background:rgba(74,193,224,.1)"><div class="nnm" style="color:var(--cn)">Cannonball</div><div class="nsk">Decide with imperfect info</div><div class="nds">Jump before you're 100% ready</div></div>
+<div class="ncc" style="background:rgba(193,147,195,.1)"><div class="nnm" style="color:var(--tr)">Trailhead</div><div class="nsk">Navigate ambiguity</div><div class="nds">Find the path before someone marks it for you</div></div>
+</div>
+<div style="font-size:11px;font-weight:600;color:var(--n);margin:10px 0 4px">One more thing:</div>
+<div style="font-size:10px;color:#666;line-height:1.8;margin-bottom:12px">Walk through at least one cabin all the way through. Then come back here and tell us what you actually thought.</div>
+<div style="text-align:center;margin-top:8px"><button onclick="nav('panel')" style="background:var(--t);color:#fff;border:none;padding:8px 24px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif">Give feedback →</button></div>
+</div></div>
+</div>
+</div>
+
+<!-- PANEL FEEDBACK PAGE -->
+<div class="pg" id="panel">
+<div class="inner">
+<div class="back" onclick="nav('names')">← Back</div>
+<div style="text-align:center;padding:16px 0 8px">
+  <div style="font-size:9px;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Learner Panel · 5 Questions</div>
+  <div style="font-size:22px;font-weight:800;color:var(--n);line-height:1.2;margin-bottom:8px">Tell us what you actually thought.</div>
+  <div style="font-size:12px;color:var(--g);line-height:1.6;max-width:380px;margin:0 auto">No right answers. No grades. Your gut reaction is the data.</div>
+</div>
+
+<!-- Q1: The dare -->
+<div class="panel-q" id="pq1">
+  <div class="pq-num">01</div>
+  <div class="pq-text">Pick any cabin. Read Week 1. Would you actually do that dare at work this week?</div>
+  <div class="pq-sub">What would stop you?</div>
+  <div class="pq-opts" id="pq1-opts">
+    <button class="pq-btn" onclick="panelSelect('pq1',this,'Yes — I\'d do it')">Yes — I'd do it</button>
+    <button class="pq-btn" onclick="panelSelect('pq1',this,'Probably — depends on the week')">Probably — depends on the week</button>
+    <button class="pq-btn" onclick="panelSelect('pq1',this,'Unlikely — feels like extra work')">Unlikely — feels like extra work</button>
+    <button class="pq-btn" onclick="panelSelect('pq1',this,'No — not for me')">No — not for me</button>
+  </div>
+  <textarea class="pq-ta" id="pq1-ta" placeholder="What would stop you? (optional)" rows="2"></textarea>
+</div>
+
+<!-- Q2: The skill -->
+<div class="panel-q" id="pq2">
+  <div class="pq-num">02</div>
+  <div class="pq-text">After reading through your cabin, could you explain the skill to a coworker in one sentence?</div>
+  <div class="pq-sub">What is it in your own words?</div>
+  <div class="pq-opts" id="pq2-opts">
+    <button class="pq-btn" onclick="panelSelect('pq2',this,'Yes — I get it')">Yes — I get it</button>
+    <button class="pq-btn" onclick="panelSelect('pq2',this,'Kind of — I have the gist')">Kind of — I have the gist</button>
+    <button class="pq-btn" onclick="panelSelect('pq2',this,'Not really — still fuzzy')">Not really — still fuzzy</button>
+  </div>
+  <textarea class="pq-ta" id="pq2-ta" placeholder="What is the skill in your own words? (optional)" rows="2"></textarea>
+</div>
+
+<!-- Q3: The manager conversation -->
+<div class="panel-q" id="pq3">
+  <div class="pq-num">03</div>
+  <div class="pq-text">Week 3 asks you to bring something to your manager. Does that feel like a natural conversation or does it feel forced?</div>
+  <div class="pq-sub">Would your manager be into this?</div>
+  <div class="pq-opts" id="pq3-opts">
+    <button class="pq-btn" onclick="panelSelect('pq3',this,'Natural — my manager would welcome it')">Natural — my manager would welcome it</button>
+    <button class="pq-btn" onclick="panelSelect('pq3',this,'Depends on the week and the topic')">Depends on the week and the topic</button>
+    <button class="pq-btn" onclick="panelSelect('pq3',this,'Forced — my manager wouldn\'t get it')">Forced — my manager wouldn't get it</button>
+    <button class="pq-btn" onclick="panelSelect('pq3',this,'I don\'t have regular 1:1s')">I don't have regular 1:1s</button>
+  </div>
+  <textarea class="pq-ta" id="pq3-ta" placeholder="Anything else? (optional)" rows="2"></textarea>
+</div>
+
+<!-- Q4: The names -->
+<div class="panel-q" id="pq4">
+  <div class="pq-num">04</div>
+  <div class="pq-text">Giddy Up. Bullseye. Cannonball. Trailhead. Which would you sign up for first?</div>
+  <div class="pq-sub">Do any make you hesitate?</div>
+  <div class="pq-opts" id="pq4-opts">
+    <button class="pq-btn" onclick="panelSelect('pq4',this,'Giddy Up')">Giddy Up</button>
+    <button class="pq-btn" onclick="panelSelect('pq4',this,'Bullseye')">Bullseye</button>
+    <button class="pq-btn" onclick="panelSelect('pq4',this,'Cannonball')">Cannonball</button>
+    <button class="pq-btn" onclick="panelSelect('pq4',this,'Trailhead')">Trailhead</button>
+  </div>
+  <textarea class="pq-ta" id="pq4-ta" placeholder="Do any make you cringe or hesitate? (optional)" rows="2"></textarea>
+</div>
+
+<!-- Q5: The post -->
+<div class="panel-q" id="pq5">
+  <div class="pq-num">05</div>
+  <div class="pq-text">Each week you post something in Slack. A photo, a screenshot, two sentences, or a voice note. Which week's post would you skip?</div>
+  <div class="pq-sub">Be honest.</div>
+  <div class="pq-opts" id="pq5-opts">
+    <button class="pq-btn" onclick="panelSelect('pq5',this,'Week 1 — photo of the dare')">Week 1 — photo of the dare</button>
+    <button class="pq-btn" onclick="panelSelect('pq5',this,'Week 2 — screenshot of my answer')">Week 2 — screenshot of my answer</button>
+    <button class="pq-btn" onclick="panelSelect('pq5',this,'Week 3 — two sentences about my manager conversation')">Week 3 — two sentences about my manager conversation</button>
+    <button class="pq-btn" onclick="panelSelect('pq5',this,'Week 4 — voice note or one sentence')">Week 4 — voice note or one sentence</button>
+    <button class="pq-btn" onclick="panelSelect('pq5',this,'I wouldn\'t skip any')">I wouldn't skip any</button>
+  </div>
+  <textarea class="pq-ta" id="pq5-ta" placeholder="Why? (optional)" rows="2"></textarea>
+</div>
+
+<!-- SUBMIT -->
+<div id="panel-submit-wrap" style="text-align:center;margin:24px 0 8px">
+  <button id="panel-submit-btn" onclick="submitPanel()" style="background:var(--t);color:#fff;border:none;padding:10px 32px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;opacity:.4;pointer-events:none">Submit feedback →</button>
+</div>
+<div id="panel-done" style="display:none;text-align:center;padding:24px;background:var(--tl);border-radius:14px;margin-bottom:16px">
+  <div style="font-size:22px;margin-bottom:8px">🎯</div>
+  <div style="font-size:15px;font-weight:700;color:var(--n)">Got it. That's the data.</div>
+  <div style="font-size:11px;color:var(--g);margin-top:4px">Thank you for helping make this better.</div>
+</div>
+</div>
+</div>
 <script>
-const GF={FORM_URL:'REPLACE_WITH_FORM_RESPONSE_URL',ENTRY_CABIN:'REPLACE_WITH_ENTRY_ID_FOR_CABIN',ENTRY_WAVE:'REPLACE_WITH_ENTRY_ID_FOR_WAVE',ENTRY_SCORE:'REPLACE_WITH_ENTRY_ID_FOR_SCORE',ENTRY_EMOJI:'REPLACE_WITH_ENTRY_ID_FOR_EMOJI'};
-function submitConfidence(cabin,wave,score){if(GF.FORM_URL.startsWith('REPLACE'))return;const emoji=getMyEmoji(cabin)||'unknown';const params=new URLSearchParams();params.set(GF.ENTRY_CABIN,cabin);params.set(GF.ENTRY_WAVE,wave);params.set(GF.ENTRY_SCORE,String(score));params.set(GF.ENTRY_EMOJI,emoji);const form=document.createElement('form');form.method='POST';form.action=GF.FORM_URL;form.target='gf-hidden';form.style.display='none';params.forEach((val,key)=>{const inp=document.createElement('input');inp.type='hidden';inp.name=key;inp.value=val;form.appendChild(inp)});document.body.appendChild(form);form.submit();document.body.removeChild(form);}
-const EMOJIS=['🦊','🐻','🐼','🦁','🐯','🐺','🦝','🦦','🦥','🦔','🐬','🦋','🦜','🦩','🐙','🦕','🌵','🍄','🌈','🎯','🚀','🎸','🎨','🏄','🤿','🎭','🧩','🎲','🪄','🔭','🌊','🏔️','🌺','🌸','🍀','🦚','🦅','🐝','🌙','⭐','🎠','🪸','🦭','🐡','🌻','🎪','🧲','🪁','🛶','🎋'];
-function getTaken(){try{return JSON.parse(localStorage.getItem('sc_taken')||'[]')}catch(e){return[]}}
-function saveTaken(arr){try{localStorage.setItem('sc_taken',JSON.stringify(arr))}catch(e){}}
-function getMyEmoji(cabin){try{return localStorage.getItem('sc_emoji_'+cabin)||null}catch(e){return null}}
-function saveMyEmoji(cabin,emoji){try{localStorage.setItem('sc_emoji_'+cabin,emoji)}catch(e){}}
-function initEmojiPicker(cabin){const grid=document.getElementById('ep-'+cabin);if(!grid)return;const taken=getTaken(),mine=getMyEmoji(cabin);grid.innerHTML='';EMOJIS.forEach(em=>{const btn=document.createElement('div');btn.className='ep-e'+(taken.includes(em)&&em!==mine?' taken':'')+(em===mine?' chosen':'');btn.textContent=em;btn.onclick=()=>selectEmoji(cabin,em);grid.appendChild(btn)});if(mine){document.getElementById('ec-'+cabin+'-em').textContent=mine;document.getElementById('ec-'+cabin).classList.add('show');const btn=document.getElementById('join-'+cabin);if(btn){btn.style.opacity='1';btn.style.pointerEvents='auto';}updateMessHallAvatar(cabin,mine);}}
-function selectEmoji(cabin,emoji){const taken=getTaken(),prev=getMyEmoji(cabin);if(prev&&prev!==emoji){const idx=taken.indexOf(prev);if(idx>-1)taken.splice(idx,1);}if(!taken.includes(emoji))taken.push(emoji);saveTaken(taken);saveMyEmoji(cabin,emoji);initEmojiPicker(cabin);updateMessHallAvatar(cabin,emoji);}
-function resetEmoji(cabin){const prev=getMyEmoji(cabin);if(prev){const taken=getTaken();const idx=taken.indexOf(prev);if(idx>-1)taken.splice(idx,1);saveTaken(taken);}try{localStorage.removeItem('sc_emoji_'+cabin)}catch(e){}document.getElementById('ec-'+cabin).classList.remove('show');const btn=document.getElementById('join-'+cabin);if(btn){btn.style.opacity='.5';btn.style.pointerEvents='none';}initEmojiPicker(cabin);}
-function joinCabin(cabin,dest){if(!getMyEmoji(cabin))return;nav(dest);}
-function updateMessHallAvatar(cabin,emoji){document.querySelectorAll('[data-you="'+cabin+'"]').forEach(el=>{el.textContent=emoji;el.style.background='none';el.style.fontSize='18px';});}
-window.addEventListener('DOMContentLoaded',()=>{['bu','gu','cn','th'].forEach(c=>initEmojiPicker(c));});
-let currentRole='ic',currentWeek=1;
-function setRole(role){currentRole=role;document.getElementById('role-ic').classList.toggle('on',role==='ic');document.getElementById('role-mgr').classList.toggle('on',role==='manager');document.querySelectorAll('.magnify').forEach(m=>m.classList.toggle('show',role==='manager'));}
-function setWeek(w){currentWeek=w;[1,2,3,4].forEach(n=>{document.getElementById('wk-btn-'+n).classList.toggle('on',n===w);const hv=document.getElementById('hv'+n);if(hv)hv.style.display=n===w?'flex':'none';const banner=document.getElementById('kit-home-w'+n);if(banner)banner.style.display=n===w?'flex':'none';});const cards=[{card:'card-gu',btn:'btn-gu',w1:'gu',w2:'gu-w2',w3:'gu-w3',w4:'gu-w4'},{card:'card-bu',btn:'btn-bu',w1:'bu-signup',w2:'bu-w2',w3:'bu-w3',w4:'bu-w4'},{card:'card-cn',btn:'btn-cn',w1:'cn',w2:'cn-w2',w3:'cn-w3',w4:'cn-w4'},{card:'card-th',btn:'btn-th',w1:'th-signup',w2:'th-w2',w3:'th-w3',w4:'th-w4'}];cards.forEach(c=>{const dest=c['w'+w];document.getElementById(c.card).setAttribute('onclick','nav(\''+dest+'\')');document.getElementById(c.btn).textContent=w===1?'Join →':'Continue →';});nav('home');}
-function nav(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById(id).classList.add('on');document.querySelectorAll('.spn a').forEach(a=>a.classList.remove('on'));if(id==='home')document.querySelectorAll('.spn a')[0].classList.add('on');else if(id.startsWith('gu'))document.querySelectorAll('.spn a')[1].classList.add('on');else if(id.startsWith('bu'))document.querySelectorAll('.spn a')[2].classList.add('on');else if(id.startsWith('cn'))document.querySelectorAll('.spn a')[3].classList.add('on');else if(id.startsWith('th'))document.querySelectorAll('.spn a')[4].classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
-function sel(el){const w=el.closest('#bu-signup')?'pre':'post';document.querySelectorAll('#bu-signup .cdd,#bu-w4 .cdd').forEach(d=>d.classList.remove('se'));el.classList.add('se');submitConfidence('bu',w,el.textContent.trim());}
-function selGu(el){const w=el.closest('#gu')?'pre':'post';document.querySelectorAll('#gu .cdd,#gu-w4 .cdd').forEach(d=>{d.style.background='';d.style.color='var(--gu)'});el.style.background='var(--gu)';el.style.color='#fff';submitConfidence('gu',w,el.textContent.trim());}
-function selCn(el){const w=el.closest('#cn')?'pre':'post';document.querySelectorAll('#cn .cdd,#cn-w4 .cdd').forEach(d=>{d.style.background='';d.style.color='var(--cn)'});el.style.background='var(--cn)';el.style.color='#fff';submitConfidence('cn',w,el.textContent.trim());}
-function selTh(el){const w=el.closest('#th-signup')?'pre':'post';document.querySelectorAll('#th-signup .cdd,#th-w4 .cdd').forEach(d=>{d.style.background='';d.style.color='var(--tr)'});el.style.background='var(--tr)';el.style.color='#fff';submitConfidence('th',w,el.textContent.trim());}
-const sl=[{t:"Your toilet paper square showed you something.",s:"Here is what you can do about it. Meet Sam."},{t:"Sam has 9 targets.",s:"Projects, goals, favors, the thing from January. Sam says yes to all of it."},{t:"One arrow. Two questions.",s:"1. Does this drive a result my team needs right now?\n2. Am I the right person to do this?"},{t:"Sam's manager just asked about the January favor. What does Sam do first?",s:"",q:["Add it to this week's list.","Run the filter. Does it drive a result the team needs right now?","Flag it to the manager."]},{t:"Option B: Run the filter",s:"The January favor was never urgent and never really Sam's to own. Both no. Clear it. The list gets shorter. That is the skill."},{t:"Sam: I ran the filter on my list. Here is what I think can shift.",s:"Manager: You are right to move that one. Sam: Got it."},{t:"Your turn next week.",s:"No pressure to get it perfect."}];
+// ─────────────────────────────────────────────
+// PANEL FEEDBACK FORM — separate Google Form
+// Jeremy: create a second Google Form for panel feedback.
+// Five short-answer fields in this order:
+//   1. Question (Q1–Q5)
+//   2. Selection (the button they clicked)
+//   3. Freetext (the textarea content)
+//   4. Emoji (their avatar identifier)
+//   5. Cabin (which cabin they walked through)
+// Then replace the five ENTRY_ values and PANEL_FORM_URL below.
+// ─────────────────────────────────────────────
+const GFP = {
+  PANEL_FORM_URL:      'REPLACE_WITH_PANEL_FORM_RESPONSE_URL',
+  ENTRY_P_QUESTION:    'REPLACE_WITH_ENTRY_ID_FOR_QUESTION',
+  ENTRY_P_SELECTION:   'REPLACE_WITH_ENTRY_ID_FOR_SELECTION',
+  ENTRY_P_FREETEXT:    'REPLACE_WITH_ENTRY_ID_FOR_FREETEXT',
+  ENTRY_P_EMOJI:       'REPLACE_WITH_ENTRY_ID_FOR_EMOJI',
+  ENTRY_P_CABIN:       'REPLACE_WITH_ENTRY_ID_FOR_CABIN',
+};
+
+const panelAnswers = {};
+
+function panelSelect(qid, btn, value) {
+  document.querySelectorAll(`#${qid}-opts .pq-btn`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  panelAnswers[qid] = value;
+  document.getElementById(qid).classList.add('answered');
+  checkPanelReady();
+}
+
+function checkPanelReady() {
+  const allAnswered = ['pq1','pq2','pq3','pq4','pq5'].every(q => panelAnswers[q]);
+  const btn = document.getElementById('panel-submit-btn');
+  btn.style.opacity = allAnswered ? '1' : '.4';
+  btn.style.pointerEvents = allAnswered ? 'auto' : 'none';
+}
+
+function submitPanel() {
+  const emoji = ['bu','gu','cn','th'].map(c => getMyEmoji(c)).find(e => e) || 'unknown';
+  const cabin = ['bu','gu','cn','th'].find(c => getMyEmoji(c)) || 'unknown';
+  ['pq1','pq2','pq3','pq4','pq5'].forEach(qid => {
+    const selection = panelAnswers[qid] || '';
+    const freetext  = (document.getElementById(`${qid}-ta`) || {}).value || '';
+    if (!GFP.PANEL_FORM_URL.startsWith('REPLACE')) {
+      const params = new URLSearchParams();
+      params.set(GFP.ENTRY_P_QUESTION,  qid);
+      params.set(GFP.ENTRY_P_SELECTION, selection);
+      params.set(GFP.ENTRY_P_FREETEXT,  freetext);
+      params.set(GFP.ENTRY_P_EMOJI,     emoji);
+      params.set(GFP.ENTRY_P_CABIN,     cabin);
+      const form = document.createElement('form');
+      form.method = 'POST'; form.action = GFP.PANEL_FORM_URL;
+      form.target = 'gf-hidden'; form.style.display = 'none';
+      params.forEach((val, key) => {
+        const inp = document.createElement('input');
+        inp.type = 'hidden'; inp.name = key; inp.value = val;
+        form.appendChild(inp);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    }
+  });
+  document.getElementById('panel-submit-wrap').style.display = 'none';
+  document.getElementById('panel-done').style.display = 'block';
+}
+
+
+// Jeremy: replace the four ENTRY_* values and FORM_URL below.
+// Steps:
+//   1. Create the Google Form (see Jeremy_GoogleForm_Setup doc).
+//   2. Open the form in Chrome. Right-click → Inspect.
+//   3. Find each field's name attribute (e.g. entry.123456789).
+//   4. Paste each entry ID below. Do not change the key names.
+//   5. Paste the formResponse URL as FORM_URL.
+// ─────────────────────────────────────────────
+const GF = {
+  FORM_URL:     'REPLACE_WITH_FORM_RESPONSE_URL',   // e.g. https://docs.google.com/forms/d/e/XXXXX/formResponse
+  ENTRY_CABIN:  'REPLACE_WITH_ENTRY_ID_FOR_CABIN',  // e.g. entry.111111111
+  ENTRY_WAVE:   'REPLACE_WITH_ENTRY_ID_FOR_WAVE',   // e.g. entry.222222222  (pre or post)
+  ENTRY_SCORE:  'REPLACE_WITH_ENTRY_ID_FOR_SCORE',  // e.g. entry.333333333  (1–5)
+  ENTRY_EMOJI:  'REPLACE_WITH_ENTRY_ID_FOR_EMOJI',  // e.g. entry.444444444
+};
+
+function submitConfidence(cabin, wave, score) {
+  // wave = 'pre' (sign-up) or 'post' (week 4)
+  if (GF.FORM_URL.startsWith('REPLACE')) return; // placeholders not yet filled — skip silently
+  const emoji = getMyEmoji(cabin) || 'unknown';
+  const params = new URLSearchParams();
+  params.set(GF.ENTRY_CABIN, cabin);
+  params.set(GF.ENTRY_WAVE,  wave);
+  params.set(GF.ENTRY_SCORE, String(score));
+  params.set(GF.ENTRY_EMOJI, emoji);
+  // POST silently via hidden form targeting the hidden iframe
+  const form = document.createElement('form');
+  form.method  = 'POST';
+  form.action  = GF.FORM_URL;
+  form.target  = 'gf-hidden';
+  form.style.display = 'none';
+  params.forEach((val, key) => {
+    const inp = document.createElement('input');
+    inp.type = 'hidden'; inp.name = key; inp.value = val;
+    form.appendChild(inp);
+  });
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+}
+
+const EMOJIS = ['🦊','🐻','🐼','🦁','🐯','🐺','🦝','🦦','🦥','🦔','🐬','🦋','🦜','🦩','🐙','🦕','🌵','🍄','🌈','🎯','🚀','🎸','🎨','🏄','🤿','🎭','🧩','🎲','🪄','🔭','🌊','🏔️','🌺','🌸','🍀','🦚','🦅','🐝','🌙','⭐','🎠','🪸','🦭','🐡','🌻','🎪','🧲','🪁','🛶','🎋'];
+
+function getTaken() {
+  try { return JSON.parse(localStorage.getItem('sc_taken') || '[]'); } catch(e) { return []; }
+}
+function saveTaken(arr) {
+  try { localStorage.setItem('sc_taken', JSON.stringify(arr)); } catch(e) {}
+}
+function getMyEmoji(cabin) {
+  try { return localStorage.getItem('sc_emoji_' + cabin) || null; } catch(e) { return null; }
+}
+function saveMyEmoji(cabin, emoji) {
+  try { localStorage.setItem('sc_emoji_' + cabin, emoji); } catch(e) {}
+}
+
+function initEmojiPicker(cabin) {
+  const grid = document.getElementById('ep-' + cabin);
+  if (!grid) return;
+  const taken = getTaken();
+  const mine = getMyEmoji(cabin);
+  grid.innerHTML = '';
+  EMOJIS.forEach(em => {
+    const btn = document.createElement('div');
+    btn.className = 'ep-e' + (taken.includes(em) && em !== mine ? ' taken' : '') + (em === mine ? ' chosen' : '');
+    btn.textContent = em;
+    btn.onclick = () => selectEmoji(cabin, em);
+    grid.appendChild(btn);
+  });
+  if (mine) {
+    document.getElementById('ec-' + cabin + '-em').textContent = mine;
+    document.getElementById('ec-' + cabin).classList.add('show');
+    const btn = document.getElementById('join-' + cabin);
+    if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
+    updateMessHallAvatar(cabin, mine);
+  }
+}
+
+function selectEmoji(cabin, emoji) {
+  const taken = getTaken();
+  const prev = getMyEmoji(cabin);
+  // Release previously taken emoji
+  if (prev && prev !== emoji) {
+    const idx = taken.indexOf(prev);
+    if (idx > -1) taken.splice(idx, 1);
+  }
+  // Claim new emoji
+  if (!taken.includes(emoji)) taken.push(emoji);
+  saveTaken(taken);
+  saveMyEmoji(cabin, emoji);
+  initEmojiPicker(cabin);
+  updateMessHallAvatar(cabin, emoji);
+}
+
+function resetEmoji(cabin) {
+  const prev = getMyEmoji(cabin);
+  if (prev) {
+    const taken = getTaken();
+    const idx = taken.indexOf(prev);
+    if (idx > -1) taken.splice(idx, 1);
+    saveTaken(taken);
+  }
+  try { localStorage.removeItem('sc_emoji_' + cabin); } catch(e) {}
+  document.getElementById('ec-' + cabin).classList.remove('show');
+  const btn = document.getElementById('join-' + cabin);
+  if (btn) { btn.style.opacity = '.5'; btn.style.pointerEvents = 'none'; }
+  initEmojiPicker(cabin);
+}
+
+function joinCabin(cabin, dest) {
+  const emoji = getMyEmoji(cabin);
+  if (!emoji) return;
+  nav(dest);
+}
+
+function updateMessHallAvatar(cabin, emoji) {
+  // Update all "You" avatars in this cabin's pages
+  document.querySelectorAll('[data-you="' + cabin + '"]').forEach(el => {
+    el.textContent = emoji;
+    el.style.background = 'none';
+    el.style.fontSize = '18px';
+  });
+}
+
+// Init all pickers on load
+window.addEventListener('DOMContentLoaded', () => {
+  ['bu','gu','cn','th'].forEach(c => initEmojiPicker(c));
+});
+
+let currentRole = 'ic';
+
+function setRole(role) {
+  currentRole = role;
+  document.getElementById('role-ic').classList.toggle('on', role === 'ic');
+  document.getElementById('role-mgr').classList.toggle('on', role === 'manager');
+  document.querySelectorAll('.magnify').forEach(m => {
+    m.classList.toggle('show', role === 'manager');
+  });
+}
+
+function setWeek(w) {
+  currentWeek = w;
+  [1,2,3,4].forEach(n => {
+    document.getElementById(`wk-btn-${n}`).classList.toggle('on', n === w);
+  });
+
+  [1,2,3,4].forEach(n => {
+    const hv = document.getElementById(`hv${n}`);
+    if (hv) hv.style.display = n === w ? 'flex' : 'none';
+    const banner = document.getElementById(`kit-home-w${n}`);
+    if (banner) banner.style.display = n === w ? 'flex' : 'none';
+  });
+
+  const cards = [
+    { card:'card-gu', btn:'btn-gu', w1:'gu',       w2:'gu-w2', w3:'gu-w3', w4:'gu-w4' },
+    { card:'card-bu', btn:'btn-bu', w1:'bu-signup', w2:'bu-w2', w3:'bu-w3', w4:'bu-w4' },
+    { card:'card-cn', btn:'btn-cn', w1:'cn',        w2:'cn-w2', w3:'cn-w3', w4:'cn-w4' },
+    { card:'card-th', btn:'btn-th', w1:'th-signup', w2:'th-w2', w3:'th-w3', w4:'th-w4' }
+  ];
+  cards.forEach(c => {
+    const dest = c[`w${w}`];
+    document.getElementById(c.card).setAttribute('onclick', `nav('${dest}')`);
+    document.getElementById(c.btn).textContent = w === 1 ? 'Join →' : 'Continue →';
+  });
+
+  nav('home');
+}
+
+function nav(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.spn a').forEach(a=>a.classList.remove('on'));
+  if(id==='home')document.querySelectorAll('.spn a')[0].classList.add('on');
+  else if(id.startsWith('gu'))document.querySelectorAll('.spn a')[1].classList.add('on');
+  else if(id.startsWith('bu'))document.querySelectorAll('.spn a')[2].classList.add('on');
+  else if(id.startsWith('cn'))document.querySelectorAll('.spn a')[3].classList.add('on');
+  else if(id.startsWith('th'))document.querySelectorAll('.spn a')[4].classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function sel(el,wave){
+  const cabin = el.closest('.pg').id.startsWith('bu') ? 'bu' : 'bu';
+  const w = wave || (el.closest('#bu-signup') ? 'pre' : 'post');
+  document.querySelectorAll('#bu-signup .cdd, #bu-w4 .cdd').forEach(d=>d.classList.remove('se'));
+  el.classList.add('se');
+  submitConfidence('bu', w, el.textContent.trim());
+}
+function selGu(el,wave){
+  const w = wave || (el.closest('#gu') ? 'pre' : 'post');
+  document.querySelectorAll('#gu .cdd, #gu-w4 .cdd').forEach(d=>{d.style.background='';d.style.color='var(--gu)'});
+  el.style.background='var(--gu)';el.style.color='#fff';
+  submitConfidence('gu', w, el.textContent.trim());
+}
+function selCn(el,wave){
+  const w = wave || (el.closest('#cn') ? 'pre' : 'post');
+  document.querySelectorAll('#cn .cdd, #cn-w4 .cdd').forEach(d=>{d.style.background='';d.style.color='var(--cn)'});
+  el.style.background='var(--cn)';el.style.color='#fff';
+  submitConfidence('cn', w, el.textContent.trim());
+}
+function selTh(el,wave){
+  const w = wave || (el.closest('#th-signup') ? 'pre' : 'post');
+  document.querySelectorAll('#th-signup .cdd, #th-w4 .cdd').forEach(d=>d.classList.remove('se'));
+  el.style.background='var(--tr)';el.style.color='#fff';
+  document.querySelectorAll('#th-signup .cdd, #th-w4 .cdd').forEach(d=>{if(d!==el){d.style.background='';d.style.color='var(--tr)'}});
+  submitConfidence('th', w, el.textContent.trim());
+}
+// BULLSEYE 7taps
+const sl=[
+{t:"Your toilet paper square showed you something.",s:"Here is what you can do about it. Meet Sam."},
+{t:"Sam has 9 targets.",s:"Projects, goals, favors, the thing from January. Sam says yes to all of it. Sound familiar?"},
+{t:"One arrow. Two questions. That is how you find the right target.",s:"1. Does this drive a result my team needs right now?\n2. Am I the right person to do this?"},
+{t:"Sam's manager just asked about the January favor. Sam hasn't touched it in six weeks. What does Sam do first?",s:"",q:["Add it to this week's list. It has been waiting long enough.","Run the filter. Does it drive a result the team needs right now? Am I the right person?","Flag it to the manager. It has been sitting too long to ignore."]},
+{t:"Option B: Run the filter",s:"The January favor has been sitting since January because it was never urgent and was never really Sam's to own. Both no. Clear it. Sam crosses it off. Three more items don't survive the filter. The list gets shorter. That is the skill."},
+{t:"Sam: I ran the filter on my list. Here is what I think can shift. What am I missing?",s:"Manager: You are right to move that one. And this one here is still yours. Sam: I wasn't sure about that one. Manager: It drives the Q3 result. It stays. Sam: Got it."},
+{t:"Your turn next week.",s:"No pressure to get it perfect."}
+];
 let tc=0;
-function rt(){let h='<div class="tn2">Slide '+(tc+1)+' of '+sl.length+'</div><div class="tx">'+sl[tc].t+'</div>';if(sl[tc].s)h+='<div class="tsu">'+sl[tc].s.replace(/\n/g,'<br>')+'</div>';if(sl[tc].q){h+='<div class="tq">';sl[tc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}document.getElementById('ts3').innerHTML=h;let d='';for(let i=0;i<sl.length;i++)d+='<div class="tdd'+(i===tc?' on':'')+'" onclick="tg2('+i+')"></div>';document.getElementById('td3').innerHTML=d}
-function tn2(d){tc=Math.max(0,Math.min(sl.length-1,tc+d));rt()}function tg2(i){tc=i;rt()}rt();
-const thSl=[{t:"The project without a map.",s:"Jordan is three weeks in. No clear scope. The team keeps asking for direction."},{t:"The cost of waiting.",s:"Week five. A cross-functional partner made a decision Jordan could have unblocked."},{t:"Read the terrain.",s:"Act: clear enough to move. Stake: worth committing to a working answer. Park: genuinely unclear."},{t:"Jordan needs to read the terrain. What should Jordan do first?",s:"",q:["Wait for the brief to get more specific","Identify one thing clear enough to move on","Escalate to leadership for clarity"]},{t:"Option B: Identify one thing clear enough to move on.",s:"Jordan names the scope as best understood. The fog stays. Jordan stops waiting for it to lift."},{t:"Jordan: I realized I was waiting for the brief instead of reading what was clear.",s:"Manager: What are you parking? Jordan: The budget question. Manager: Good read."},{t:"Your turn next week.",s:"No pressure to get it perfect."}];
+function rt(){let h='<div class="tn2">Slide '+(tc+1)+' of '+sl.length+'</div><div class="tx">'+sl[tc].t+'</div>';
+if(sl[tc].s)h+='<div class="tsu">'+sl[tc].s.replace(/\n/g,'<br>')+'</div>';
+if(sl[tc].q){h+='<div class="tq">';sl[tc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}
+document.getElementById('ts3').innerHTML=h;
+let d='';for(let i=0;i<sl.length;i++)d+='<div class="tdd'+(i===tc?' on':'')+'" onclick="tg2('+i+')"></div>';
+document.getElementById('td3').innerHTML=d}
+function tn2(d){tc=Math.max(0,Math.min(sl.length-1,tc+d));rt()}
+function tg2(i){tc=i;rt()}
+rt();
+
+// TRAILHEAD 7taps
+const thSl=[
+{t:"The project without a map.",s:"Jordan is three weeks in. No clear scope. The team keeps asking for direction. Jordan keeps saying: I am waiting for the brief to land."},
+{t:"The cost of waiting.",s:"Week five. Jordan gets a message from a cross-functional partner: we needed a decision on scope two weeks ago so we made one. The timeline moved. The team is rebuilding work Jordan could have unblocked. Jordan was waiting for the brief to get clearer. The brief did not move. The work did."},
+{t:"Read the terrain.",s:"Act: clear enough to move. Stake: worth committing to a working answer. Park: genuinely unclear. Not worth the cycles yet."},
+{t:"Jordan needs to read the terrain. What should Jordan do first?",s:"",q:["Wait for the brief to get more specific","Identify one thing clear enough to move on","Escalate to leadership for clarity"]},
+{t:"Option B: Identify one thing clear enough to move on.",s:"Jordan names the scope as best understood and ships a working definition. Hold it loosely. The fog stays. Jordan stops waiting for it to lift. Decisions start moving."},
+{t:"Jordan: I realized I was waiting for the brief instead of reading what was clear. I staked a working scope.",s:"Manager: What did you act on? Jordan: I moved the three decisions that were blocked. Manager: What are you parking? Jordan: The budget question. That one needs the brief. Manager: Good read."},
+{t:"Your turn next week.",s:"No pressure to get it perfect."}
+];
 let thTc=0;
-function thRt(){let h='<div class="tn2">Slide '+(thTc+1)+' of '+thSl.length+'</div><div class="tx">'+thSl[thTc].t+'</div>';if(thSl[thTc].s)h+='<div class="tsu">'+thSl[thTc].s.replace(/\n/g,'<br>')+'</div>';if(thSl[thTc].q){h+='<div class="tq">';thSl[thTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}document.getElementById('th-ts').innerHTML=h;let d='';for(let i=0;i<thSl.length;i++)d+='<div class="tdd'+(i===thTc?' on':'')+'" onclick="thTg('+i+')"></div>';document.getElementById('th-td').innerHTML=d}
-function thTn(d){thTc=Math.max(0,Math.min(thSl.length-1,thTc+d));thRt()}function thTg(i){thTc=i;thRt()}thRt();
-const guSl=[{t:"The room is drifting.",s:"Alex is in a cross-functional meeting. The decision is heading the wrong way. Alex goes along."},{t:"The cost of going along.",s:"Three weeks later the decision ships. A key stakeholder pushes back. Alex knew. The question stayed inside."},{t:"One question can shift a room.",s:"Ask before you assert. Not a position. Not a takeover."},{t:"The room is drifting. What does Alex do first?",s:"",q:["State the concern directly","Ask what the room is optimizing for","Ask a clarifying question to buy time"]},{t:"Option B: Ask what the room is optimizing for.",s:"What are we optimizing for here? The room pauses. Someone says: speed over quality. The conversation shifts. That is the skill."},{t:"Alex: I noticed the decision was moving fast and I asked what we were optimizing for.",s:"Manager: What did you almost say instead? Alex: I almost said I think we are going the wrong direction. Manager: Good call."},{t:"Your turn next week.",s:"No pressure to get it perfect."}];
+function thRt(){let h='<div class="tn2">Slide '+(thTc+1)+' of '+thSl.length+'</div><div class="tx">'+thSl[thTc].t+'</div>';
+if(thSl[thTc].s)h+='<div class="tsu">'+thSl[thTc].s.replace(/\n/g,'<br>')+'</div>';
+if(thSl[thTc].q){h+='<div class="tq">';thSl[thTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}
+document.getElementById('th-ts').innerHTML=h;
+let d='';for(let i=0;i<thSl.length;i++)d+='<div class="tdd'+(i===thTc?' on':'')+'" onclick="thTg('+i+')"></div>';
+document.getElementById('th-td').innerHTML=d}
+function thTn(d){thTc=Math.max(0,Math.min(thSl.length-1,thTc+d));thRt()}
+function thTg(i){thTc=i;thRt()}
+thRt();
+
+// GIDDY UP 7taps
+const guSl=[
+{t:"The room is drifting.",s:"Alex is in a cross-functional meeting. The decision is heading the wrong way. Alex has the read. Alex goes along."},
+{t:"The cost of going along.",s:"Three weeks later the decision ships. A key stakeholder pushes back in the department meeting. The room looks around. Alex knew it was heading there. The question stayed inside."},
+{t:"One question can shift a room.",s:"Ask before you assert. Not a position. Not a takeover. One question points the room without owning it."},
+{t:"The room is drifting. What does Alex do first?",s:"",q:["State the concern directly","Ask what the room is optimizing for","Ask a clarifying question to buy time"]},
+{t:"Option B: Ask what the room is optimizing for.",s:"What are we optimizing for here? The room pauses. Someone says: speed over quality. The conversation shifts. That is the skill."},
+{t:"Alex: I noticed the decision was moving fast and I asked what we were optimizing for. It shifted the conversation.",s:"Manager: What did you almost say instead? Alex: I almost said I think we are going the wrong direction. Manager: That would have landed differently. Good call."},
+{t:"Your turn next week.",s:"No pressure to get it perfect."}
+];
 let guTc=0;
-function guRt(){let h='<div class="tn2">Slide '+(guTc+1)+' of '+guSl.length+'</div><div class="tx">'+guSl[guTc].t+'</div>';if(guSl[guTc].s)h+='<div class="tsu">'+guSl[guTc].s.replace(/\n/g,'<br>')+'</div>';if(guSl[guTc].q){h+='<div class="tq">';guSl[guTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}document.getElementById('gu-ts').innerHTML=h;let d='';for(let i=0;i<guSl.length;i++)d+='<div class="tdd'+(i===guTc?' on':'')+'" onclick="guTg('+i+')"></div>';document.getElementById('gu-td').innerHTML=d}
-function guTn(d){guTc=Math.max(0,Math.min(guSl.length-1,guTc+d));guRt()}function guTg(i){guTc=i;guRt()}guRt();
-const cnSl=[{t:"A decision that won't move.",s:"Jordan has a vendor decision sitting in draft for two weeks."},{t:"The cost of toe in.",s:"Jordan gets a message on Tuesday. The vendor went with another client. The launch date moves three weeks."},{t:"Toe in. Jump. Take the steps.",s:"A test has a question. Toe in: I need one thing before I can commit. Jump: I have what I need."},{t:"Jordan's decision is toe in. What should Jordan do first?",s:"",q:["Is this the right vendor?","Name what you are actually testing for","Who needs to sign off before I move?"]},{t:"Option B: Name what you are actually testing for.",s:"Jordan asks: am I confident in this vendor's timeline? Yes. Jordan has known that for a week. That was avoidance. Jordan jumps."},{t:"Jordan: The vendor decision was toe in. I could not name what I was testing for.",s:"Manager: How long had you known? Jordan: About a week. Manager: That is the skill."},{t:"Your turn next week.",s:"No pressure to get it perfect."}];
+function guRt(){let h='<div class="tn2">Slide '+(guTc+1)+' of '+guSl.length+'</div><div class="tx">'+guSl[guTc].t+'</div>';
+if(guSl[guTc].s)h+='<div class="tsu">'+guSl[guTc].s.replace(/\n/g,'<br>')+'</div>';
+if(guSl[guTc].q){h+='<div class="tq">';guSl[guTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}
+document.getElementById('gu-ts').innerHTML=h;
+let d='';for(let i=0;i<guSl.length;i++)d+='<div class="tdd'+(i===guTc?' on':'')+'" onclick="guTg('+i+')"></div>';
+document.getElementById('gu-td').innerHTML=d}
+function guTn(d){guTc=Math.max(0,Math.min(guSl.length-1,guTc+d));guRt()}
+function guTg(i){guTc=i;guRt()}
+guRt();
+
+// CANNONBALL 7taps
+const cnSl=[
+{t:"A decision that won't move.",s:"Jordan has a vendor decision sitting in draft for two weeks. Not urgent. Not permanent. Just sitting."},
+{t:"The cost of toe in.",s:"Jordan gets a message on a Tuesday. The vendor went with another client. The slot is gone. The launch date moves three weeks. Jordan knew it was sitting. Nobody escalated it. It just waited."},
+{t:"Toe in. Jump. Take the steps.",s:"A test has a question. Toe in means: I need one thing before I can commit. I can name it. Jump means: I have what I need. Take the steps means: I tested it. It is not the right way in."},
+{t:"Jordan's decision is toe in. What should Jordan do first?",s:"",q:["Is this the right vendor?","Name what you are actually testing for","Who needs to sign off before I move?"]},
+{t:"Option B: Name what you are actually testing for.",s:"Jordan asks: am I confident in this vendor's timeline? Yes. Jordan has known that for a week. That was not a test. That was avoidance. Jordan jumps."},
+{t:"Jordan: The vendor decision was toe in. I could not name what I was testing for.",s:"Manager: What did you find when you named it? Jordan: I already had the answer. I was confident in their timeline. Manager: How long had you known? Jordan: About a week. Manager: That is the skill. Next time you will catch it faster."},
+{t:"Your turn next week.",s:"No pressure to get it perfect."}
+];
 let cnTc=0;
-function cnRt(){let h='<div class="tn2">Slide '+(cnTc+1)+' of '+cnSl.length+'</div><div class="tx">'+cnSl[cnTc].t+'</div>';if(cnSl[cnTc].s)h+='<div class="tsu">'+cnSl[cnTc].s.replace(/\n/g,'<br>')+'</div>';if(cnSl[cnTc].q){h+='<div class="tq">';cnSl[cnTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}document.getElementById('cn-ts').innerHTML=h;let d='';for(let i=0;i<cnSl.length;i++)d+='<div class="tdd'+(i===cnTc?' on':'')+'" onclick="cnTg('+i+')"></div>';document.getElementById('cn-td').innerHTML=d}
-function cnTn(d){cnTc=Math.max(0,Math.min(cnSl.length-1,cnTc+d));cnRt()}function cnTg(i){cnTc=i;cnRt()}cnRt();
+function cnRt(){let h='<div class="tn2">Slide '+(cnTc+1)+' of '+cnSl.length+'</div><div class="tx">'+cnSl[cnTc].t+'</div>';
+if(cnSl[cnTc].s)h+='<div class="tsu">'+cnSl[cnTc].s.replace(/\n/g,'<br>')+'</div>';
+if(cnSl[cnTc].q){h+='<div class="tq">';cnSl[cnTc].q.forEach(o=>{h+='<button class="to" onclick="this.classList.toggle(\'pk\')">'+o+'</button>'});h+='</div>'}
+document.getElementById('cn-ts').innerHTML=h;
+let d='';for(let i=0;i<cnSl.length;i++)d+='<div class="tdd'+(i===cnTc?' on':'')+'" onclick="cnTg('+i+')"></div>';
+document.getElementById('cn-td').innerHTML=d}
+function cnTn(d){cnTc=Math.max(0,Math.min(cnSl.length-1,cnTc+d));cnRt()}
+function cnTg(i){cnTc=i;cnRt()}
+cnRt();
 </script>
 </body>
 </html>
