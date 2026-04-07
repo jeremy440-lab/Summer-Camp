@@ -1,0 +1,27 @@
+{
+  "version": "3.114.36620.0",
+  "course_id": "5WGI6EIu7WR",
+  "title": "OneQuestionBlock",
+  "thumbnail": "story_content/thumbnail.jpg",
+  "scenes": [
+    {
+      "title": "Intro Scene"
+    }
+  ],
+  "slides": [
+    {
+      "id": "6i4eXdNOsYT",
+      "title": "Intro Slide",
+      "scene_index": "1.1"
+    }
+  ],
+  "player": {
+    "name": "unified",
+    "width": 980,
+    "height": 635
+  },
+  "stage": {
+    "width": 960,
+    "height": 540
+  }
+}
